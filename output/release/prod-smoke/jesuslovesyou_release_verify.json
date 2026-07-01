@@ -1,0 +1,431 @@
+{
+  "base_url": "https://barmatrix.app",
+  "checked_routes": 106,
+  "checked_sitemap_routes": 104,
+  "failures": [
+    {
+      "path": "/Jesuslovesyou",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/artifacts",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/checkout",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/checkout/success",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/qa-report",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040203",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010406",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010503",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010107",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/32020302",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/32020404",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040301",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040302",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/35030304",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010407",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22198",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14823",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14824",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14763",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14772",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14778",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14808",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14836",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14848",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14844",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14807",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22232",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14765",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14826",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14830",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14829",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14834",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14835",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14837",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14825",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17318",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/18076",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22211",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22227",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14840",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14852",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14872",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14875",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14899",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17130",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/18503",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14873",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14883",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14896",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/19579",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22231",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14757",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14767",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14777",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14781",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14769",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14791",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22150",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22152",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22157",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14863",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17192",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17761",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22156",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22229",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/qa-report",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040100",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040502",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040501",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040300",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040200",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/43020201",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14293",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14294",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20714",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22590",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22611",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14231",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14233",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14237",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14275",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/18457",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17114",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/19280",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14225",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17163",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/19025",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17157",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14234",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17170",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14242",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17680",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14236",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20153",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20231",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20981",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22592",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14223",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14224",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17574",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/18911",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/21147",
+      "reason": "Response status code does not indicate success: 404 (Not Found)."
+    }
+  ]
+}

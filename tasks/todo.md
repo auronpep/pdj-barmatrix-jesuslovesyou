@@ -3476,6 +3476,37 @@ Review:
   - Preserve prefixed checkout attribution and auth behavior.
 - Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
 
+## Implementation Slice 98 - Production Smoke Baseline
+
+- [x] Reuse the existing release manifest verifier for production smoke.
+- [x] Write production-smoke output separately so local release proof stays intact.
+- [x] Verify whether `/Jesuslovesyou` is already live on `https://barmatrix.app`.
+- [x] Record the live-site state before any app push, Vercel deploy, or homepage pointer change.
+- [ ] Rerun the same production smoke after the app release is deployed.
+
+Review:
+
+- Existing verifier used:
+  - `C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1`
+- Command run:
+  - `pwsh -NoProfile -File C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1 -BaseUrl https://barmatrix.app -OutputDir C:\PDJ\output\release\prod-smoke -Verify`
+- Generated production-smoke artifacts:
+  - `C:\PDJ\output\release\prod-smoke\jesuslovesyou_release_manifest.json`
+  - `C:\PDJ\output\release\prod-smoke\jesuslovesyou_release_manifest.md`
+  - `C:\PDJ\output\release\prod-smoke\jesuslovesyou_release_verify.json`
+- Production baseline result:
+  - Command exited `1` because the live route is not deployed yet.
+  - Base URL: `https://barmatrix.app`.
+  - Checked routes: `106`.
+  - Checked sitemap routes: `104`.
+  - Failures: `106`.
+  - Failure pattern: every `/Jesuslovesyou` candidate route returned `404 Not Found`.
+- Interpretation:
+  - Local release candidate remains verified.
+  - Production is not yet serving the `/Jesuslovesyou` route group.
+  - The next real release step is app branch push/deploy, then rerun this same production smoke.
+- Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
+
 ## Implementation Slice 97 - Jesuslovesyou Release Preflight
 
 - [x] Add a release preflight checker that does not push or deploy.
