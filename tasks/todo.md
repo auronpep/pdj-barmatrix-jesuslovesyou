@@ -2700,3 +2700,44 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q14242 proof artifacts to `origin/main`.
+
+## Implementation Slice 79 - Q17680 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17680.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17680.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q17680 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 77]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `19` Con Law details, `30` seed candidates, and `11` remaining; next seed is Q17680 with seed key `A`, outline `44040305`, selector `44040300`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17680.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17680.md`.
+  - Source key: `B`; transformed/public detail key: `A` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040305` for Rational basis review classifications.
+  - App seed selector is parent `44040300` with `child_code` match to outline `44040305`; no seed JSON edit is expected.
+  - Transform drift correction: the finished transform made the permit denial explicitly anti-Christian, which risks adding Free Exercise or religious-classification strict-scrutiny issues. The app payload preserves the intended rational-basis-with-bite rule by making the town animus target a transitional recovery residence, not a religious classification.
+  - Current-law spot check: Moreno and Romer confirm bare animus toward an unpopular group is not a legitimate government interest; Cleburne confirms unsupported fears/stereotypes can fail rational basis in land-use/group-home settings.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q17680 detail returned clean and confirmed the explicit religious-classification phrases from the transform were not present.
+  - `npx tsx` import/count check returned `20` Con Law details, `30` seed candidates, and `10` remaining seeds without detail pages; Q17680 has key `A`, selector `44040300`/`child_code`, outline `44040305`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/17680`; route HTML contains `Animus Fails Rational Basis`, `that kind of recovery home`, and `GK-CONLAW-RATIONAL-BASIS-ANIMUS-01`; route HTML does not contain the explicit religious-classification drift phrases from the transform.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17680`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q17680 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17680-desktop.png` (`1440x2556`, `223548` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17680-mobile.png` (`390x5066`, `218852` bytes). Pixel probe found non-white rendered content in both files.
+- Local app commit: `a78865c` (`Add Con Law Q17680 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q17680 proof artifacts to `origin/main`.
