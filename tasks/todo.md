@@ -692,3 +692,33 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14807-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14807-mobile.png`
+
+## Implementation Slice 19 - Q22232 Religion-Credibility Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22232.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ22232.md`.
+- [x] Recode note: source code `31010502`, recommended code `31010406`; FRE 610 truthfulness/credibility rule controls.
+- [x] Add public-safe Q22232 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q22232.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `fd1982a Add Evidence Q22232 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\22232.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ22232.md`.
+- Public-safe source cleanup: the crude source organization name was not used; app scan for that source wording returned `NO_HITS`.
+- Q22232 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22232`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22232`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/22232`
+  - Playwright DOM checks found 9 required Q22232 strings, `12` authored case-study links, and `38` review rows.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22232-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22232-mobile.png`
