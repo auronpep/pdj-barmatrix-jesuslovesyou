@@ -3504,8 +3504,8 @@ Review:
 - Interpretation:
   - Local release candidate remains verified.
   - Production is not yet serving the `/Jesuslovesyou` route group.
-  - The next real release step is app branch push/deploy, then rerun this same production smoke.
-- Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
+  - The app branch push is recorded in Slice 99; the next real release step is Vercel deploy, then rerun this same production smoke.
+- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.
 
 ## Implementation Slice 97 - Jesuslovesyou Release Preflight
 
@@ -3514,7 +3514,8 @@ Review:
 - [x] Verify the real Vercel project metadata points at `barmatrix-app`.
 - [x] Run app lint, app build, and local route-manifest verification from the preflight.
 - [x] Record explicit next release gates for app push, Vercel deploy, production smoke, and homepage pointer change.
-- [ ] Push or deploy app changes only after explicit release authorization.
+- [x] Push the verified app branch to the private app repo.
+- [ ] Deploy app changes only after explicit production release authorization.
 
 Review:
 
@@ -3541,4 +3542,35 @@ Review:
   - Push `C:\barmatrix-app` only after explicit release authorization.
   - Deploy from real path `C:\barmatrix-app`, not the `C:\BMO\app-repo` junction.
   - Smoke production `/Jesuslovesyou` routes and prefixed checkout before changing the homepage pointer.
-- Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
+- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.
+
+## Implementation Slice 99 - Private App Branch Publish
+
+- [x] Verify `auronpep/barmatrix-app` is private immediately before pushing.
+- [x] Run the full Jesuslovesyou preflight before publishing the app branch.
+- [x] Push `C:\barmatrix-app` branch `codex-review` to `origin/codex-review`.
+- [x] Rerun the full preflight after the push so branch state reads `ahead 0`.
+- [x] Confirm production `/Jesuslovesyou` is still not live after the branch push.
+- [ ] Deploy from `C:\barmatrix-app` only after explicit production release authorization.
+
+Review:
+
+- App repo push:
+  - Remote: `https://github.com/auronpep/barmatrix-app.git`.
+  - Visibility: `auronpep/barmatrix-app PRIVATE`.
+  - Branch: `codex-review`.
+  - Push result: `d78d440..ea34952  codex-review -> codex-review`.
+  - Local and remote head after push: `ea34952e587dcebcf64d69c4a091a9fe6a5c0fb2`.
+  - App status after push: `## codex-review...origin/codex-review`.
+- Preflight:
+  - Updated `C:\PDJ\scripts\Check-JesuslovesyouReleasePreflight.ps1` so branch ahead/behind state is recorded instead of requiring unpushed local commits.
+  - Command passed after push: `pwsh -NoProfile -File C:\PDJ\scripts\Check-JesuslovesyouReleasePreflight.ps1 -RunBuild`.
+  - Failed checks: `0`.
+  - App branch state: `ahead 0`.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`.
+  - Local route verifier checked `106` routes and `104` sitemap routes with `failures: []`.
+- Production check:
+  - `https://barmatrix.app/Jesuslovesyou` still returns `404 Not Found`.
+  - This confirms the private branch push did not change production.
+- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.

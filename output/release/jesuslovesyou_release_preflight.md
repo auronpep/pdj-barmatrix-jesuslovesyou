@@ -6,9 +6,9 @@ Release allowed without user authorization: **false**
 
 | Check | Passed | Detail |
 | --- | --- | --- |
-| pdj_state_recorded | True | ## main...origin/main; dirty_count=1 |
-| app_clean | True | ## codex-review...origin/codex-review [ahead 95] |
-| app_local_commits_present | True | ahead 95 |
+| pdj_state_recorded | True | ## main...origin/main; dirty_count=4 |
+| app_clean | True | ## codex-review...origin/codex-review |
+| app_branch_state_recorded | True | ahead 0 |
 | app_repo_private | True | auronpep/barmatrix-app PRIVATE |
 | pdj_repo_private | True | auronpep/pdj-barmatrix-jesuslovesyou PRIVATE |
 | vercel_project | True | barmatrix-app / prj_LwBgARXTft6aeyoRwhIqEDWh5p4P |
@@ -20,7 +20,7 @@ Release allowed without user authorization: **false**
 ## Current State
 
 - PDJ: ## main...origin/main
-- App: ## codex-review...origin/codex-review [ahead 95]
+- App: ## codex-review...origin/codex-review
 - API: ## codex/diagnostic-red-zone-funnel-2026-06-20...origin/codex/diagnostic-red-zone-funnel-2026-06-20, dirty count 3, preserved read-only
 - Vercel project: barmatrix-app / prj_LwBgARXTft6aeyoRwhIqEDWh5p4P
 - Local route verify: checked 106 routes, failures 0
@@ -28,7 +28,7 @@ Release allowed without user authorization: **false**
 ## Next Authorized Release Steps
 
 - Verify C:\barmatrix-app remains clean and auronpep/barmatrix-app is private.
-- Push the current app branch only after explicit release authorization.
+- If new app commits appear, push only after private-target verification.
 - Deploy from C:\barmatrix-app, not C:\BMO\app-repo.
 - Verify Vercel project barmatrix-app before deploy.
 - Smoke production /Jesuslovesyou routes and prefixed checkout.

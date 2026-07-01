@@ -95,7 +95,7 @@ $vercelProject = Get-Content -Raw -LiteralPath $vercelProjectPath | ConvertFrom-
 $checks = @()
 $checks += [pscustomobject]@{ name = "pdj_state_recorded"; passed = $true; detail = "$($pdjState.header); dirty_count=$($pdjState.dirty_count)" }
 $checks += [pscustomobject]@{ name = "app_clean"; passed = ($appState.dirty_count -eq 0); detail = $appState.header }
-$checks += [pscustomobject]@{ name = "app_local_commits_present"; passed = ($appState.ahead -gt 0); detail = "ahead $($appState.ahead)" }
+$checks += [pscustomobject]@{ name = "app_branch_state_recorded"; passed = $true; detail = "ahead $($appState.ahead)" }
 $checks += [pscustomobject]@{ name = "app_repo_private"; passed = ($appRepo.visibility -eq "PRIVATE"); detail = "$($appRepo.nameWithOwner) $($appRepo.visibility)" }
 $checks += [pscustomobject]@{ name = "pdj_repo_private"; passed = ($pdjRepo.visibility -eq "PRIVATE"); detail = "$($pdjRepo.nameWithOwner) $($pdjRepo.visibility)" }
 $checks += [pscustomobject]@{ name = "vercel_project"; passed = ($vercelProject.projectName -eq "barmatrix-app"); detail = "$($vercelProject.projectName) / $($vercelProject.projectId)" }
@@ -127,7 +127,7 @@ $releaseAllowed = $false
 $result = [ordered]@{
   generated_at = (Get-Date).ToString("s")
   release_allowed_without_user_authorization = $releaseAllowed
-  app_push_deploy_homepage_pointer_gate = "requires explicit user authorization"
+  app_push_deploy_homepage_pointer_gate = "production deploy and homepage pointer require explicit user authorization"
   pdj = [ordered]@{
     status = $pdjState.header
     dirty_count = $pdjState.dirty_count
@@ -155,7 +155,7 @@ $result = [ordered]@{
   }
   next_authorized_release_steps = @(
     "Verify C:\barmatrix-app remains clean and auronpep/barmatrix-app is private.",
-    "Push the current app branch only after explicit release authorization.",
+    "If new app commits appear, push only after private-target verification.",
     "Deploy from C:\barmatrix-app, not C:\BMO\app-repo.",
     "Verify Vercel project barmatrix-app before deploy.",
     "Smoke production /Jesuslovesyou routes and prefixed checkout.",
