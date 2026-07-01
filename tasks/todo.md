@@ -2620,3 +2620,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q14234 proof artifacts to `origin/main`.
+
+## Implementation Slice 77 - Q17170 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17170.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17170.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q17170 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 75]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `17` Con Law details, `30` seed candidates, and `13` remaining; next seed is Q17170 with seed key `C`, outline `44040303`, selector `44040300`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17170.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17170.md`.
+  - Source key: `A`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040303` for Strict scrutiny (suspect) classifications.
+  - App seed selector is parent `44040300` with `child_code` match to transformed outline `44040303`; no seed JSON edit is expected.
+  - Current-law spot check: Croson and Adarand confirm government racial classifications receive strict scrutiny; SFFA states strict scrutiny asks for a compelling interest and narrow tailoring and recognizes remediation of specific identified unlawful discrimination as a narrow potential compelling interest; strict scrutiny is not automatic invalidity.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q17170 detail returned clean.
+  - `npx tsx` import/count check returned `18` Con Law details, `30` seed candidates, and `12` remaining seeds without detail pages; Q17170 has key `C`, selector `44040300`/`child_code`, outline `44040303`, `4` choices, `4` locks, `4` keys, and `3` drill seeds; seed key, selector, and outline match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/17170`; route HTML contains `Strict Scrutiny Is Still A Test`, `Good Samaritan shelter-repair`, `compelling remedial interest and narrow tailoring`, and `GK-CONLAW-RACE-STRICT-SCRUTINY-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17170`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q17170 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17170-desktop.png` (`1440x2649`, `231412` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17170-mobile.png` (`390x5197`, `229016` bytes). Pixel probe found non-white rendered content in both files.
+- Local app commit: `78f384b` (`Add Con Law Q17170 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q17170 proof artifacts to `origin/main`.
