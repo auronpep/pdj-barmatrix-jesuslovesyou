@@ -2320,3 +2320,48 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q18457 proof artifacts to `origin/main` in commit `cb6121a`.
+
+## Implementation Slice 70 - Q17114 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17114.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17114.md`.
+- [x] Reconcile source key, transformed key, seed key, and outline code.
+- [x] Add public-safe Q17114 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 68]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `10` Con Law details, `30` seed candidates, and `20` remaining; next seed is Q17114 with seed key `C`, outline `44040201`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `a83345d Add Con Law Q17114 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17114.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17114.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040201` for Incorporation of Bill of Rights through the Fourteenth Amendment.
+  - App seed key already matched the transformed key `C`; no seed JSON edit was needed.
+  - Current-law spot check: Timbs, Constitution Annotated incorporation tables, and Bajakajian support the route that Excessive Fines is incorporated against states and local governments through Fourteenth Amendment Due Process, while excessiveness still requires a gross-disproportionality merits analysis.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/17114`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q17114 detail returned clean.
+  - `npx tsx` import/count check returned `11` Con Law details, `30` seed candidates, and `19` remaining seeds without detail pages; Q17114 has key `C`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `C`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q17114 detail route; route HTML contains `Incorporation Before Proportionality`, the credited answer text, and `GK-CONLAW-FARMSTAND-EXCESSIVE-FINE-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17114`.
+  - Playwright CLI captured desktop and mobile full-page screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17114-desktop.png` (`1440x4513`, `545995` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17114-mobile.png` (`390x8932`, `525130` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q17114 proof artifacts to `origin/main`.
