@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-07-01T12:01:15",
+  "release_allowed_without_user_authorization": false,
+  "app_push_deploy_homepage_pointer_gate": "requires explicit user authorization",
+  "pdj": {
+    "status": "## main...origin/main",
+    "dirty_count": 1,
+    "repo": {
+      "nameWithOwner": "auronpep/pdj-barmatrix-jesuslovesyou",
+      "url": "https://github.com/auronpep/pdj-barmatrix-jesuslovesyou",
+      "visibility": "PRIVATE"
+    }
+  },
+  "app": {
+    "status": "## codex-review...origin/codex-review [ahead 95]",
+    "dirty_count": 0,
+    "ahead": 95,
+    "repo": {
+      "nameWithOwner": "auronpep/barmatrix-app",
+      "url": "https://github.com/auronpep/barmatrix-app",
+      "visibility": "PRIVATE"
+    },
+    "vercel_project": {
+      "projectId": "prj_LwBgARXTft6aeyoRwhIqEDWh5p4P",
+      "orgId": "team_HKHemC6mfIOm0t6aROxfEOug",
+      "projectName": "barmatrix-app"
+    }
+  },
+  "api": {
+    "status": "## codex/diagnostic-red-zone-funnel-2026-06-20...origin/codex/diagnostic-red-zone-funnel-2026-06-20",
+    "dirty_count": 3,
+    "note": "read-only reference state preserved"
+  },
+  "local_routes": {
+    "base_url": "http://127.0.0.1:3001",
+    "checked_routes": 106,
+    "checked_sitemap_routes": 104,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "pdj_state_recorded",
+      "passed": true,
+      "detail": "## main...origin/main; dirty_count=1"
+    },
+    {
+      "name": "app_clean",
+      "passed": true,
+      "detail": "## codex-review...origin/codex-review [ahead 95]"
+    },
+    {
+      "name": "app_local_commits_present",
+      "passed": true,
+      "detail": "ahead 95"
+    },
+    {
+      "name": "app_repo_private",
+      "passed": true,
+      "detail": "auronpep/barmatrix-app PRIVATE"
+    },
+    {
+      "name": "pdj_repo_private",
+      "passed": true,
+      "detail": "auronpep/pdj-barmatrix-jesuslovesyou PRIVATE"
+    },
+    {
+      "name": "vercel_project",
+      "passed": true,
+      "detail": "barmatrix-app / prj_LwBgARXTft6aeyoRwhIqEDWh5p4P"
+    },
+    {
+      "name": "api_left_read_only",
+      "passed": true,
+      "detail": "## codex/diagnostic-red-zone-funnel-2026-06-20...origin/codex/diagnostic-red-zone-funnel-2026-06-20; dirty_count=3"
+    },
+    {
+      "name": "app_lint",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "app_build",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "local_route_manifest",
+      "passed": true,
+      "detail": "exit 0"
+    }
+  ],
+  "failed_checks": 0,
+  "commands": {
+    "lint": "npm run lint",
+    "build": "npm run build",
+    "route_verify": "pwsh -NoProfile -File C:\\PDJ\\scripts\\Build-JesuslovesyouReleaseManifest.ps1 -Verify"
+  },
+  "next_authorized_release_steps": [
+    "Verify C:\\barmatrix-app remains clean and auronpep/barmatrix-app is private.",
+    "Push the current app branch only after explicit release authorization.",
+    "Deploy from C:\\barmatrix-app, not C:\\BMO\\app-repo.",
+    "Verify Vercel project barmatrix-app before deploy.",
+    "Smoke production /Jesuslovesyou routes and prefixed checkout.",
+    "Change homepage pointer only after production smoke passes."
+  ]
+}

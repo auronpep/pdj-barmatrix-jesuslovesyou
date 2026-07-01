@@ -3475,3 +3475,39 @@ Review:
   - Smoke production `/Jesuslovesyou` routes before changing the homepage pointer.
   - Preserve prefixed checkout attribution and auth behavior.
 - Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
+
+## Implementation Slice 97 - Jesuslovesyou Release Preflight
+
+- [x] Add a release preflight checker that does not push or deploy.
+- [x] Verify the app repo and PDJ repo are private before any future release write.
+- [x] Verify the real Vercel project metadata points at `barmatrix-app`.
+- [x] Run app lint, app build, and local route-manifest verification from the preflight.
+- [x] Record explicit next release gates for app push, Vercel deploy, production smoke, and homepage pointer change.
+- [ ] Push or deploy app changes only after explicit release authorization.
+
+Review:
+
+- Preflight checker:
+  - `C:\PDJ\scripts\Check-JesuslovesyouReleasePreflight.ps1`
+- Generated artifacts:
+  - `C:\PDJ\output\release\jesuslovesyou_release_preflight.json`
+  - `C:\PDJ\output\release\jesuslovesyou_release_preflight.md`
+- Command passed:
+  - `pwsh -NoProfile -File C:\PDJ\scripts\Check-JesuslovesyouReleasePreflight.ps1 -RunBuild`
+- Preflight results:
+  - Failed checks: `0`.
+  - App state: `## codex-review...origin/codex-review [ahead 95]`, dirty count `0`.
+  - App repo visibility: `auronpep/barmatrix-app PRIVATE`.
+  - PDJ repo visibility: `auronpep/pdj-barmatrix-jesuslovesyou PRIVATE`.
+  - Vercel project: `barmatrix-app`, project id `prj_LwBgARXTft6aeyoRwhIqEDWh5p4P`, org id `team_HKHemC6mfIOm0t6aROxfEOug`.
+  - API reference state preserved read-only with dirty count `3`.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`.
+  - Route verifier reran `pwsh -NoProfile -File C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1 -Verify`.
+  - Local route verification reports `checked_routes: 106`, `checked_sitemap_routes: 104`, and `failures: []`.
+- Hard gates retained:
+  - `release_allowed_without_user_authorization: false`.
+  - Push `C:\barmatrix-app` only after explicit release authorization.
+  - Deploy from real path `C:\barmatrix-app`, not the `C:\BMO\app-repo` junction.
+  - Smoke production `/Jesuslovesyou` routes and prefixed checkout before changing the homepage pointer.
+- Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
