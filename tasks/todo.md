@@ -1511,3 +1511,35 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14777-desktop.png` (`506454` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14777-mobile.png` (`469507` bytes)
+
+## Implementation Slice 47 - Q14781 Statement Against Interest/Privilege Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14781.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14781.md`.
+- [x] Reconcile transform key mismatch: seed/frontmatter key `D`; source row, transform official key, residual answer, credited answer, and body explanations all key `C`.
+- [x] Add public-safe Q14781 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14781.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `d3d8fcc Add Evidence Q14781 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14781.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14781.md`.
+- Key reconciliation: seed/frontmatter key `D` disagreed with source row and transform body; detail page uses correct answer `C`.
+- Q14781 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14781`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14781`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14781`
+  - Playwright DOM checks found 6 required Q14781 strings on desktop and mobile.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+  - App data count found `40` authored case studies, `50` seed candidates, and `10` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14781-desktop.png` (`492718` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14781-mobile.png` (`459487` bytes)
