@@ -2783,3 +2783,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q14236 proof artifacts to `origin/main`.
+
+## Implementation Slice 81 - Q20153 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\20153.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ20153.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q20153 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 79]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `21` Con Law details, `30` seed candidates, and `9` remaining; next seed is Q20153 with seed key `B`, outline `44040501`, selector `44040501`/`exact`, and coverage group `free_exercise`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\20153.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ20153.md`.
+  - Source key: `D`; transformed/public detail key: `B` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040501` for Freedom of religion.
+  - App seed key already matches the transformed key `B`; no seed JSON edit is expected.
+  - Current-law spot check: Mitchell v. Helms supports neutral, secular-use educational equipment aid available to religious and nonreligious schools on equal terms; Flast v. Cohen supplies the federal taxpayer standing exception for Establishment Clause challenges to congressional taxing-and-spending; Article I, Section 8 supplies Congress's taxing-and-spending power.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q20153 detail returned clean and confirmed no original Aid to Education Act/computer-equipment wording leaked into the public payload.
+  - `npx tsx` import/count check returned `22` Con Law details, `30` seed candidates, and `8` remaining seeds without detail pages; Q20153 has key `B`, selector `44040501`/`exact`, outline `44040501`, `4` choices, `4` locks, `4` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/20153`; route HTML contains `Neutral Secular Aid Survives`, `Lampstand Labs Act`, the credited answer text, and `GK-CONLAW-ESTABLISHMENT-NEUTRAL-AID-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/20153`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q20153 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20153-desktop.png` (`1440x2796`, `246831` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20153-mobile.png` (`390x5562`, `245095` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `eb553fc` (`Add Con Law Q20153 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q20153 proof artifacts to `origin/main`.
