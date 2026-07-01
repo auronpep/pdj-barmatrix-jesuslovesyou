@@ -2230,3 +2230,48 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q14237 proof artifacts to `origin/main`.
+
+## Implementation Slice 68 - Q14275 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14275.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14275.md`.
+- [x] Reconcile source key, transformed key, seed key, and outline code.
+- [x] Add public-safe Q14275 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 66]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `8` Con Law details, `30` seed candidates, and `22` remaining; next seed is Q14275 with seed key `B`, outline `44040100`, and coverage group `state_action`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `abd3333 Add Con Law Q14275 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14275.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14275.md`.
+  - Source key: `D`; transformed/public detail key: `B` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040100` for State Action Requirement.
+  - App seed key already matched the transformed key `B`; no seed JSON edit was needed.
+  - Current-law spot check: Constitution Annotated, Moose Lodge, Blum, Lugar, Brentwood, and Roberts support the threshold frame that neutral public-facility use does not itself make a private group's internal rule state action, while absolute association-rights immunity would overclaim.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14275`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q14275 detail returned clean.
+  - `npx tsx` import/count check returned `9` Con Law details, `30` seed candidates, and `21` remaining seeds without detail pages; Q14275 has key `B`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `B`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14275 detail route; route HTML contains `Public Venue Is Not State Action`, `GK-CONLAW-STATE-ACTION-PUBLIC-VENUE-01`, and the credited answer text.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14275`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14275-desktop.png` (`1440x4577`, `548820` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14275-mobile.png` (`390x8897`, `508691` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q14275 proof artifacts to `origin/main`.
