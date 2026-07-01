@@ -982,3 +982,33 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17318-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17318-mobile.png`
+
+## Implementation Slice 29 - Q18076 Refreshing-Recollection Attorney-Notes Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\18076.md`.
+- [x] Confirmed no transformed CQ file exists: `C:\FOC\Workspace\Finished\CQ18076.md`.
+- [x] Confirmed seed CSV marks `has_finished_transform` as `False` and leaves `transform_path` empty.
+- [x] Add public-safe source-only Q18076 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q18076.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `6881768 Add Evidence Q18076 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\18076.md`.
+- Transform status: no `C:\FOC\Workspace\Finished\CQ18076.md`; seed CSV has `has_finished_transform=False` and empty `transform_path`.
+- Q18076 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/18076`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/18076`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/18076`
+  - Playwright DOM checks found 8 required Q18076 strings.
+  - App data count found `22` authored case studies, `50` seed candidates, and `28` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q18076-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q18076-mobile.png`
