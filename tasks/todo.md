@@ -3068,3 +3068,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q17574 proof artifacts to `origin/main`.
+
+## Implementation Slice 88 - Q18911 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\18911.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ18911.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q18911 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 86]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `28` Con Law details, `30` seed candidates, and `2` remaining; next seed is Q18911 with seed key `C`, outline `44040502`, selector `44040502`/`exact`, and coverage group `first_amendment_speech_forum`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\18911.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ18911.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040502` for Freedom of speech and expression.
+  - App seed key already matches the transformed key `C`; no seed JSON edit is expected.
+  - Current-law spot check: Mosley supports the content-control rule; Forsyth County confirms hostile audience reaction is not a content-neutral basis for suppressing or burdening speech; Perry and Southeastern Promotions support forum constraints in opened public facilities.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q18911 detail returned clean and confirmed no original public-auditorium/immigration-policy wording leaked into the public payload.
+  - `npx tsx` import/count check returned `29` Con Law details, `30` seed candidates, and `1` remaining seed without a detail page; next seed is Q21147. Q18911 has key `C`, selector `44040502`/`exact`, outline `44040502`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, source-outline values, and `has_finished_transform: true` match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/18911`; route HTML contains `Listener Anger Is Not Neutral`, `Grace Harbor`, the credited answer text, `C / correct`, and `GK-CONLAW-HECKLER-VETO-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/18911`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q18911 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q18911-desktop.png` (`1440x2597`, `221488` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q18911-mobile.png` (`390x5061`, `221415` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `b85b0fd` (`Add Con Law Q18911 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q18911 proof artifacts to `origin/main`.
