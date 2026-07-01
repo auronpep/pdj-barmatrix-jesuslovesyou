@@ -1390,3 +1390,33 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q19579-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q19579-mobile.png`
+
+## Implementation Slice 43 - Q22231 404(b) Plan/Propensity Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22231.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ22231.md`.
+- [x] Add public-safe Q22231 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q22231.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `52fa7f9 Add Evidence Q22231 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\22231.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ22231.md`.
+- Q22231 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22231`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22231`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/22231`
+  - Playwright DOM checks found 6 required Q22231 strings on desktop and mobile.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+  - App data count found `36` authored case studies, `50` seed candidates, and `14` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22231-desktop.png` (`527199` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22231-mobile.png` (`492400` bytes)
