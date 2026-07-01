@@ -2823,3 +2823,44 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q20153 proof artifacts to `origin/main`.
+
+## Implementation Slice 82 - Q20231 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\20231.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ20231.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q20231 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 80]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `22` Con Law details, `30` seed candidates, and `8` remaining; next seed is Q20231 with seed key `C`, outline `44040501`, selector `44040501`/`exact`, and coverage group `free_exercise`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\20231.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ20231.md`.
+  - Source key: `A`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040501` for Freedom of religion.
+  - App seed key already matches the transformed key `C`; no seed JSON edit is expected.
+  - Public-copy guardrail: teach the belief/conduct distinction without endorsing unlawful conduct or resistance to civil law.
+  - Current-law spot check: Reynolds and Cantwell preserve the belief/action distinction; Ballard and Constitution Annotated confirm courts/government may not regulate or judge religious belief as such.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q20231 detail returned clean and confirmed no original civil-law/divine-law phrasing leaked into the public payload.
+  - `npx tsx` import/count check returned `23` Con Law details, `30` seed candidates, and `7` remaining seeds without detail pages; Q20231 has key `C`, selector `44040501`/`exact`, outline `44040501`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/20231`; route HTML contains `Belief Cannot Be Punished`, `Crown Above Caesars`, the credited answer text, and `GK-CONLAW-BELIEF-CONDUCT-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/20231`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q20231 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20231-desktop.png` (`1440x2561`, `211909` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20231-mobile.png` (`390x4919`, `212718` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `54b61e6` (`Add Con Law Q20231 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q20231 proof artifacts to `origin/main`.
