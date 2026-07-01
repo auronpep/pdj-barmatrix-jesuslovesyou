@@ -2945,3 +2945,47 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q22592 proof artifacts to `origin/main`.
+
+## Implementation Slice 85 - Q14223 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14223.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14223.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Correct Q14223 app seed key and add public-safe Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 83]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `25` Con Law details, `30` seed candidates, and `5` remaining; next seed is Q14223 with seed key `C`, outline `44040502`, selector `44040502`/`exact`, and coverage group `first_amendment_speech_forum`.
+- App scope:
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-seed-candidates.json`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14223.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14223.md`.
+  - Source key: `D`; transformed CQ frontmatter and app seed incorrectly list public key `C`.
+  - Transform body is internally inconsistent: its choice C is the least-restrictive-means trap, choice D is the reasonable-fit answer, and the black-letter analysis says choice D is correct.
+  - App seed key must be corrected from `C` to `D` for this slice; otherwise the public route would credit the wrong legal reason.
+  - Source row, transformed CQ, and app seed all use outline code `44040502` for Freedom of speech and expression.
+  - Current-law spot check: Central Hudson supplies the commercial-speech framework; Fox rejects least-restrictive-means as the required commercial-speech tailoring test; Rubin illustrates failure where a commercial-speech restriction does not fit the asserted interest.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts lib/jesuslovesyou/conlaw-seed-candidates.json` passed with only the repo's LF-to-CRLF warnings.
+  - Public-safe/source-leak scan over Q14223 detail returned clean and confirmed no original sidewalk-machine/public-sidewalk wording leaked into the public payload.
+  - `npx tsx` import/count check returned `26` Con Law details, `30` seed candidates, and `4` remaining seeds without detail pages; Q14223 has corrected key `D`, selector `44040502`/`exact`, outline `44040502`, `4` choices, `4` locks, `3` keys, and `3` drill seeds.
+  - Seed correction check confirmed `conlaw-seed-candidates.json` now lists Q14223 key `D`; detail and seed keys match; choice C is a trap and choice D is correct.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14223`; route HTML contains `Commercial Speech Needs Fit`, `15 of the 150`, `Choose D because`, `D / correct`, `C / trap`, and `GK-CONLAW-COMMERCIAL-SPEECH-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14223`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q14223 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14223-desktop.png` (`1440x2579`, `234657` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14223-mobile.png` (`390x5364`, `234324` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `e19b68b` (`Add Con Law Q14223 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q14223 proof artifacts to `origin/main`.
