@@ -2365,3 +2365,48 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q17114 proof artifacts to `origin/main`.
+
+## Implementation Slice 71 - Q19280 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\19280.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ19280.md`.
+- [x] Reconcile source key, transformed key, seed key, and outline code.
+- [x] Add public-safe Q19280 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 69]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `11` Con Law details, `30` seed candidates, and `19` remaining; next seed is Q19280 with seed key `D`, outline `44040202`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `1c31e95 Add Con Law Q19280 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\19280.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ19280.md`.
+  - Source key: `B`; transformed/public detail key: `D` after answer shuffle.
+  - Source row listed outline code `44040201`, while transformed CQ and app seed classify Q19280 under `44040202` Punitive Damages.
+  - App seed key already matched the transformed key `D`; no seed JSON edit was needed.
+  - Current-law spot check: BMW v. Gore and State Farm confirm punitive-damages due process guideposts of reprehensibility, ratio to harm, and comparable civil penalties; Mathews confirms procedural due process balancing is a separate procedure-focused frame.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/19280`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q19280 detail returned clean.
+  - `npx tsx` import/count check returned `12` Con Law details, `30` seed candidates, and `18` remaining seeds without detail pages; Q19280 has key `D`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `D`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q19280 detail route; route HTML contains `Guideposts, Not Jury Free Rein`, the credited answer text, and `GK-CONSTITUTIONAL_LAW-PATMOS-RELIC-CHALICE-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/19280`.
+  - Playwright CLI captured desktop and mobile full-page screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q19280-desktop.png` (`1440x4360`, `504534` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q19280-mobile.png` (`390x8415`, `490999` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q19280 proof artifacts to `origin/main`.
