@@ -2115,3 +2115,38 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22611-desktop.png` (`1440x4339`, `496303` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22611-mobile.png` (`390x8409`, `473507` bytes)
+
+## Implementation Slice 65 - Q14231 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14231.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14231.md`.
+- [x] Confirm source key `C`, transformed/public detail key `B`, and outline correction from source `44040305` to state-action node `44040100`.
+- [x] Add public-safe Q14231 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `4b17031 Add Con Law Q14231 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14231.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14231.md`.
+  - Source key: `C`; transformed/public detail key: `B` after answer shuffle.
+  - Source row outline code `44040305`; transformed/app seed outline code `44040100` because the credited answer tests state action, not rational-basis classification.
+  - Current-law spot check: the Fourteenth Amendment text, Constitution Annotated state-action doctrine, and Jackson v. Metropolitan Edison confirm that equal protection reaches governmental action, not ordinary private pricing by a regulated business.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14231`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q14231 detail returned clean.
+  - `npx tsx` import/count check returned `6` Con Law details, `30` seed candidates, and `24` remaining seeds without detail pages; Q14231 has key `B`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `B`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14231 detail route; route HTML contains `State Action Before Scrutiny`, `Covenant Mutual`, `Equal Protection Clause does not apply`, `GK-CONLAW-STATE-ACTION-01`, and `Threshold Before Scrutiny`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14231`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14231-desktop.png` (`1440x4390`, `500416` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14231-mobile.png` (`390x8389`, `471790` bytes)
