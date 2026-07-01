@@ -1157,3 +1157,32 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14872-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14872-mobile.png`
+
+## Implementation Slice 35 - Q14875 Rule-403 Exclusion Factors Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14875.md`.
+- [x] Check transformed CQ file: `C:\FOC\Workspace\Finished\CQ14875.md` was not present, so this slice uses a fresh public-safe paraphrase from the source row.
+- [x] Add public-safe Q14875 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14875.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `1720e0f Add Evidence Q14875 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14875.md`.
+- Transform check: `C:\FOC\Workspace\Finished\CQ14875.md` was missing; Q14875 content is a fresh public-safe paraphrase from the source row.
+- Q14875 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14875`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14875`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14875`
+  - Playwright DOM checks found 8 required Q14875 strings.
+  - App data count found `28` authored case studies, `50` seed candidates, and `22` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14875-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14875-mobile.png`
