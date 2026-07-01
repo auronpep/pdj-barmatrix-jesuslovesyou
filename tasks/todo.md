@@ -1862,3 +1862,37 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22229-desktop.png` (`490294` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22229-mobile.png` (`461609` bytes)
+
+## Implementation Slice 58 - Con Law Pilot Inventory
+
+- [x] Re-read Con Law registry and first-group pilot spec.
+- [x] Check exact-code availability for the six planned Con Law selectors.
+- [x] Confirm Due Process needs child-code selection because exact code `44040200` has `0` local QBank rows.
+- [x] Add the smallest reusable Con Law inventory builder.
+- [x] Generate and verify Con Law inventory + 30 seed candidates.
+- [x] Record output paths and counts.
+
+Review:
+
+- Added script: `C:\PDJ\scripts\Build-ConLawPilotInventory.ps1`.
+- Generated output folder: `C:\PDJ\output\conlaw-pilot-01`.
+- Exact-code availability check:
+  - `43020201`: `90` local QBank rows.
+  - `44040100`: `9` local QBank rows.
+  - `44040200`: `0` local QBank rows; child-code prefix `440402` has `62` local QBank rows across `44040201`, `44040202`, and `44040203`.
+  - `44040300`: `17` exact local QBank rows, plus child-code rows under `440403`.
+  - `44040501`: `49` local QBank rows.
+  - `44040502`: `78` local QBank rows.
+- Verification passed:
+  - `pwsh -NoProfile -File C:\PDJ\scripts\Build-ConLawPilotInventory.ps1 -Verify`
+  - PowerShell parser check returned `PARSER_OK`.
+  - `git -C C:\PDJ diff --check`
+  - JSON parse/count check returned `489` inventory rows and `30` seed candidates.
+  - Seed candidates are balanced at `5` each for selectors `43020201`, `44040100`, `44040200`, `44040300`, `44040501`, and `44040502`.
+- Output artifacts:
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_inventory.json`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_inventory.csv`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_inventory_summary.md`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.json`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.csv`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.md`
