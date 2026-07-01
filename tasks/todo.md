@@ -3185,3 +3185,41 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed final 30/30 closeout proof to `origin/main`.
+
+## Goal Audit - Evidence Metadata Reconciliation
+
+- [x] Verify prep workspace and project docs still exist.
+- [x] Verify private GitHub target for PDJ.
+- [x] Verify CodeGraph status for PDJ and app.
+- [x] Re-run aggregate seed/detail contracts for both first-group pilots.
+- [x] Fix Evidence seed metadata drift exposed by the aggregate check.
+- [x] Re-run lint, build, and all pilot detail routes.
+- [x] Commit local app metadata fix and private PDJ proof.
+
+Review:
+
+- Setup evidence:
+  - `C:\PDJ\.codex`, `C:\PDJ\.codegraph`, `C:\PDJ\AGENTS.md`, `C:\PDJ\docs\rebuild-prep-report.md`, and `C:\PDJ\incoming\After_Setup_firstgroup.md` are present.
+  - `C:\PDJ\docs\rebuild-prep-report.md` records `33` incoming files, `32` text/structured files read, the controlled-vocab workbook inspection, BMO/app/API plumbing, the `/Jesuslovesyou/` route plan, and the CodeGraph setup boundary.
+  - `git -C C:\PDJ remote -v` points to `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`; `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - `C:\barmatrix-app` remote is `https://github.com/auronpep/barmatrix-app.git`; `gh repo view auronpep/barmatrix-app --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - CodeGraph status: `C:\PDJ` has `11` indexed files; `C:\barmatrix-app` has `312` indexed files, `3774` nodes, and `7556` edges.
+- Evidence metadata fix:
+  - Aggregate Evidence check initially showed `50` details, `50` seeds, `0` remaining, but seed/detail mismatches for Q14757, Q14781, and Q14863.
+  - Selected transform/source reconciliation showed Q14757 public detail should be key `B` and outline `33040103`; Q14781 key should be `C`; Q14863 key should be `D`.
+  - Patched `C:\barmatrix-app\lib\jesuslovesyou\evidence-seed-candidates.json` only; no route/component changes were needed.
+- Final verification after patch:
+  - Evidence aggregate contract returned `details: 50`, `seeds: 50`, `remaining: []`, `duplicateDetails: []`, and `mismatches: []`.
+  - Con Law aggregate contract returned `details: 30`, `seeds: 30`, `remaining: []`, `duplicateDetails: []`, and `mismatches: []`.
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/evidence-seed-candidates.json` passed with only the repo's LF-to-CRLF warning.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`.
+  - Route sweep checked all `80` first-group detail URLs under `/Jesuslovesyou/conlaw-pilot-01/seeds/{id}` and `/Jesuslovesyou/evidence-pilot-01/seeds/{id}`; result was `failures: []`.
+- Local app metadata commit:
+  - `752c50d` (`Reconcile Evidence seed metadata`).
+- Remaining hard gate:
+  - `C:\barmatrix-app` changes remain local-only. No app push, Vercel deploy, or homepage pointer change has been performed because that is a production/repository write gate.
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed this audit/proof update to `origin/main`.
