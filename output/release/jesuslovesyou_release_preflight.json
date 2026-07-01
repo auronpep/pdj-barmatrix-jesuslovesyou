@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-01T12:15:50",
+  "generated_at": "2026-07-01T12:30:57",
   "release_allowed_without_user_authorization": false,
   "app_push_deploy_homepage_pointer_gate": "production deploy and homepage pointer require explicit user authorization",
   "pdj": {
     "status": "## main...origin/main",
-    "dirty_count": 0,
+    "dirty_count": 1,
     "repo": {
       "nameWithOwner": "auronpep/pdj-barmatrix-jesuslovesyou",
       "url": "https://github.com/auronpep/pdj-barmatrix-jesuslovesyou",
@@ -41,7 +41,7 @@
     {
       "name": "pdj_state_recorded",
       "passed": true,
-      "detail": "## main...origin/main; dirty_count=0"
+      "detail": "## main...origin/main; dirty_count=1"
     },
     {
       "name": "app_clean",

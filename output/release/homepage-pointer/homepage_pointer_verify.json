@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-07-01T12:31:10",
+  "deployment_id": "dpl_13TXkQd3HXz1hBJpY7nD9HjKYgjg",
+  "deployment_url": "https://barmatrix-o5pyshmmw-sunnylee.vercel.app",
+  "no_follow": [
+    {
+      "url": "https://barmatrix.app/",
+      "status": 308,
+      "location": "/Jesuslovesyou",
+      "message": "Response status code does not indicate success: 308 (Permanent Redirect)."
+    },
+    {
+      "url": "https://www.barmatrix.app/",
+      "status": 308,
+      "location": "https://barmatrix.app/",
+      "message": "Response status code does not indicate success: 308 (Permanent Redirect)."
+    }
+  ],
+  "follow": [
+    {
+      "url": "https://barmatrix.app/",
+      "status": 200,
+      "contains_jesus": true,
+      "contains_frontdoor": true,
+      "bytes": 64442
+    },
+    {
+      "url": "https://www.barmatrix.app/",
+      "status": 200,
+      "contains_jesus": true,
+      "contains_frontdoor": true,
+      "bytes": 64442
+    },
+    {
+      "url": "https://barmatrix.app/Jesuslovesyou",
+      "status": 200,
+      "contains_jesus": true,
+      "contains_frontdoor": true,
+      "bytes": 64442
+    },
+    {
+      "url": "https://barmatrix.app/Jesuslovesyou/checkout",
+      "status": 200,
+      "contains_jesus": true,
+      "contains_frontdoor": false,
+      "bytes": 32156
+    }
+  ]
+}

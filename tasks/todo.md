@@ -3586,7 +3586,7 @@ Review:
 - [x] Run full production smoke for all `/Jesuslovesyou` release routes.
 - [x] Verify prefixed checkout routes return `200`.
 - [x] Verify the root homepage has not been pointed at `/Jesuslovesyou`.
-- [ ] Change the homepage pointer only after final approval.
+- [x] Change the homepage pointer to `/Jesuslovesyou`.
 
 Review:
 
@@ -3619,5 +3619,57 @@ Review:
     - `https://barmatrix.app/Jesuslovesyou/checkout`: `200`, contains `Jesuslovesyou`.
     - `https://barmatrix.app/Jesuslovesyou/checkout/success`: `200`, contains `Jesuslovesyou`.
     - `https://barmatrix.app/sitemap.xml`: `200`, contains `Jesuslovesyou`.
-  - Homepage pointer check: `https://barmatrix.app/` returned `200`, did not contain the Jesuslovesyou front-door marker `Build the new BarMatrix factory beside the live site.`.
-- Remaining hard gate: no homepage pointer change was performed.
+  - Homepage pointer check before Slice 101: `https://barmatrix.app/` returned `200`, did not contain the Jesuslovesyou front-door marker `Build the new BarMatrix factory beside the live site.`.
+- Homepage pointer change is recorded in Slice 101.
+
+## Implementation Slice 101 - Homepage Pointer To Jesuslovesyou
+
+- [x] Read the local Next.js redirect docs required by `C:\barmatrix-app\AGENTS.md`.
+- [x] Change only `C:\barmatrix-app\app\page.tsx` so `/` permanently redirects to `/Jesuslovesyou`.
+- [x] Run lint and production build locally.
+- [x] Smoke the root redirect on a fresh local production server.
+- [x] Commit and push the private app branch.
+- [x] Deploy from the real path `C:\barmatrix-app` to Vercel production.
+- [x] Inspect the deployment and aliases.
+- [x] Smoke the live homepage pointer, `/Jesuslovesyou`, and prefixed checkout.
+- [x] Rerun full production route smoke after the homepage pointer deploy.
+
+Review:
+
+- App change:
+  - File: `C:\barmatrix-app\app\page.tsx`.
+  - New behavior: root `/` calls `permanentRedirect("/Jesuslovesyou")`.
+  - App commit: `14818aa Point homepage to Jesuslovesyou`.
+  - Push result: `ea34952..14818aa  codex-review -> codex-review`.
+  - App status after push/deploy: `## codex-review...origin/codex-review`.
+- Local checks:
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`.
+  - Fresh local server: `http://127.0.0.1:3002`.
+  - Local root probe: `/` returned `308` with `Location: /Jesuslovesyou`.
+  - Local `/Jesuslovesyou` returned `200` and contained the front-door marker.
+  - Local `/Jesuslovesyou/checkout` returned `200`.
+- Deploy:
+  - Command: `vercel deploy --prod --yes`.
+  - Workdir: `C:\barmatrix-app`.
+  - Deployment id: `dpl_13TXkQd3HXz1hBJpY7nD9HjKYgjg`.
+  - Deployment URL: `https://barmatrix-o5pyshmmw-sunnylee.vercel.app`.
+  - Inspector URL: `https://vercel.com/sunnylee/barmatrix-app/13TXkQd3HXz1hBJpY7nD9HjKYgjg`.
+  - Ready state: `READY`.
+  - Target: `production`.
+  - Aliases confirmed by `vercel inspect`: `https://barmatrix.app`, `https://www.barmatrix.app`, and project Vercel aliases.
+- Homepage pointer smoke:
+  - Artifact: `C:\PDJ\output\release\homepage-pointer\homepage_pointer_verify.json`.
+  - `https://barmatrix.app/` no-follow probe returned `308` with `Location: /Jesuslovesyou`.
+  - `https://www.barmatrix.app/` no-follow probe returned `308` with `Location: https://barmatrix.app/`.
+  - Followed `https://barmatrix.app/` returned `200`, contained `Jesuslovesyou`, and contained the front-door marker `Build the new BarMatrix factory beside the live site.`.
+  - Followed `https://www.barmatrix.app/` returned `200`, contained `Jesuslovesyou`, and contained the front-door marker.
+  - `https://barmatrix.app/Jesuslovesyou` returned `200` and contained the front-door marker.
+  - `https://barmatrix.app/Jesuslovesyou/checkout` returned `200` and contained `Jesuslovesyou`.
+- Full production smoke:
+  - Command: `pwsh -NoProfile -File C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1 -BaseUrl https://barmatrix.app -OutputDir C:\PDJ\output\release\prod-smoke-homepage-pointer -Verify`.
+  - Generated artifacts:
+    - `C:\PDJ\output\release\prod-smoke-homepage-pointer\jesuslovesyou_release_manifest.json`
+    - `C:\PDJ\output\release\prod-smoke-homepage-pointer\jesuslovesyou_release_manifest.md`
+    - `C:\PDJ\output\release\prod-smoke-homepage-pointer\jesuslovesyou_release_verify.json`
+  - Production verifier result: `checked_routes: 106`, `checked_sitemap_routes: 104`, `failures: []`.
