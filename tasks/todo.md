@@ -637,3 +637,30 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14848-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14848-mobile.png`
+
+## Implementation Slice 17 - Q14844 Witness Truthfulness Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14844.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14844.md`.
+- [x] Reconcile key/source conflict: source key `A`, seed/header key `C`, transform body/C3 key `B`; the public payload uses the coherent cross-examination question with `B` credited and keeps the barred transcript as a trap/lock.
+- [x] Add public-safe Q14844 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14844.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App local-only commit: `0d62bc2 Add Evidence Q14844 case study`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts` and `C:\barmatrix-app\lib\jesuslovesyou\evidence-seed-candidates.json`.
+- Seed-list correction: only Q14844 changed from seed key `C` to `B`; Q14824 and Q14829 were rechecked against HEAD and left unchanged.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14844`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14844`
+  - Playwright DOM checks found 8 required Q14844 strings, `10` authored case-study links, and `40` review rows.
+  - Public-safe scan over changed app data returned `NO_HITS`.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14844-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14844-mobile.png`
