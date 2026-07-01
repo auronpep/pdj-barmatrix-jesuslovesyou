@@ -2042,3 +2042,37 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20714-desktop.png` (`543410` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20714-mobile.png` (`512373` bytes)
+
+## Implementation Slice 63 - Q22590 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22590.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ22590.md`.
+- [x] Add public-safe Q22590 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `89bc410 Add Con Law Q22590 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\22590.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ22590.md`.
+  - Source key: `C`; transformed/public detail key: `A` after answer shuffle.
+  - Outline lock: selector/source/selected code `43020201`.
+  - Current-law spot check: Constitution Annotated, Texas v. United States, and American Trucking Associations v. City of Los Angeles confirm ripeness fails when the alleged injury depends on contingent future enforcement.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/22590`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over `conlaw-question-details.ts` returned clean.
+  - `npx tsx` import/count check returned `4` Con Law details, `30` seed candidates, and `26` remaining seeds without detail pages; Q22590 has key `A`, `4` choices, `4` locks, `3` keys, and `3` drill seeds.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q22590 detail route; route HTML contains `Ripeness Before Merits`, `Good Neighbor Shuttle`, `Claim depends on penalties the city has not imposed`, `GK-CONLAW-RIPENESS-CONTINGENT-01`, and `ripeness`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/22590`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22590-desktop.png` (`1440x4282`, `504349` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22590-mobile.png` (`390x8540`, `477062` bytes)
