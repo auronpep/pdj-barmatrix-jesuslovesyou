@@ -256,3 +256,48 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22198-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22198-mobile.png`
+
+## Implementation Slice 8 - All Seed Review Routes
+
+- [x] Reuse `C:\barmatrix-app\lib\jesuslovesyou\evidence-seed-candidates.json` for route params.
+- [x] Prerender every Evidence seed candidate at `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]`.
+- [x] Keep Q22198 as the only fully authored case study for now.
+- [x] Add a public-safe fallback review-row page for unreviewed seed candidates.
+- [x] Link every seed card to its review route.
+- [x] Add all seed review routes to `sitemap.xml`.
+- [x] Verify lint, build, sample HTTP routes, sitemap counts, and rendered fallback/detail content.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - All Seed Review Routes - 2026-07-01
+
+- App local commit: `0e1f0a3 Add Evidence seed review routes`.
+- App data updated: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App seed page updated: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\seeds\page.tsx`.
+- App dynamic route updated: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\seeds\[questionId]\page.tsx`.
+- App sitemap updated: `C:\barmatrix-app\app\sitemap.ts`.
+- Public-safe data check passed: no `C:\`, `QBank`, `Finished`, `qbank_path`, `transform_path`, or `selected_path` strings in the app seed/detail route files.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]` with 50 generated paths.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14824`
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22198`
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds`
+- Sitemap verification:
+  - seed detail route count: 50
+  - contains `/Jesuslovesyou/evidence-pilot-01/seeds/14824`
+  - contains `/Jesuslovesyou/evidence-pilot-01/seeds/22198`
+- Seed page rendered link counts:
+  - authored case-study links: 1
+  - review-row links: 49
+  - total seed links: 50
+- Fallback rendered DOM verification for Q14824 passed:
+  - queued-review title present
+  - Q14824 present
+  - `42%` present
+  - recommended code `31010107` present
+  - review status present
+  - next authoring lock present
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seed-14824-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seed-14824-mobile.png`
