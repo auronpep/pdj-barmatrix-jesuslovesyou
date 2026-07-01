@@ -1829,3 +1829,36 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22156-desktop.png` (`504918` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22156-mobile.png` (`473023` bytes)
+
+## Implementation Slice 57 - Q22229 Evidence Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22229.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ22229.md`.
+- [x] Add public-safe Q22229 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q22229.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `7af1041 Add Evidence Q22229 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\22229.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ22229.md`.
+- Key reconciliation: source key `A`; transformed/public detail key `B` after answer shuffle.
+- Outline reconciliation: source outline `35030304`; transformed/public detail outline `35030304`.
+- Q22229 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22229`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/evidence-question-details.ts`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npx tsx` app data count returned `50` authored case studies, `50` seed candidates, and `0` remaining seeds without detail pages.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22229`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/22229`
+  - Route HTML contains the Q22229 title, stem signal, correct answer text, and FRE 411 negligence/fault rule.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22229-desktop.png` (`490294` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22229-mobile.png` (`461609` bytes)
