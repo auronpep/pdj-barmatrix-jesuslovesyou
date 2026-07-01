@@ -6,7 +6,7 @@ Release allowed without user authorization: **false**
 
 | Check | Passed | Detail |
 | --- | --- | --- |
-| pdj_state_recorded | True | ## main...origin/main; dirty_count=4 |
+| pdj_state_recorded | True | ## main...origin/main; dirty_count=0 |
 | app_clean | True | ## codex-review...origin/codex-review |
 | app_branch_state_recorded | True | ahead 0 |
 | app_repo_private | True | auronpep/barmatrix-app PRIVATE |

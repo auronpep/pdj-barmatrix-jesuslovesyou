@@ -3482,7 +3482,7 @@ Review:
 - [x] Write production-smoke output separately so local release proof stays intact.
 - [x] Verify whether `/Jesuslovesyou` is already live on `https://barmatrix.app`.
 - [x] Record the live-site state before any app push, Vercel deploy, or homepage pointer change.
-- [ ] Rerun the same production smoke after the app release is deployed.
+- [x] Rerun the same production smoke after the app release is deployed.
 
 Review:
 
@@ -3504,8 +3504,8 @@ Review:
 - Interpretation:
   - Local release candidate remains verified.
   - Production is not yet serving the `/Jesuslovesyou` route group.
-  - The app branch push is recorded in Slice 99; the next real release step is Vercel deploy, then rerun this same production smoke.
-- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.
+  - The app branch push is recorded in Slice 99 and the Vercel deploy is recorded in Slice 100.
+- Remaining hard gate: no homepage pointer change was performed.
 
 ## Implementation Slice 97 - Jesuslovesyou Release Preflight
 
@@ -3515,7 +3515,7 @@ Review:
 - [x] Run app lint, app build, and local route-manifest verification from the preflight.
 - [x] Record explicit next release gates for app push, Vercel deploy, production smoke, and homepage pointer change.
 - [x] Push the verified app branch to the private app repo.
-- [ ] Deploy app changes only after explicit production release authorization.
+- [x] Deploy the prefixed route group to production.
 
 Review:
 
@@ -3542,7 +3542,7 @@ Review:
   - Push `C:\barmatrix-app` only after explicit release authorization.
   - Deploy from real path `C:\barmatrix-app`, not the `C:\BMO\app-repo` junction.
   - Smoke production `/Jesuslovesyou` routes and prefixed checkout before changing the homepage pointer.
-- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.
+- Remaining hard gate: no homepage pointer change was performed.
 
 ## Implementation Slice 99 - Private App Branch Publish
 
@@ -3551,7 +3551,7 @@ Review:
 - [x] Push `C:\barmatrix-app` branch `codex-review` to `origin/codex-review`.
 - [x] Rerun the full preflight after the push so branch state reads `ahead 0`.
 - [x] Confirm production `/Jesuslovesyou` is still not live after the branch push.
-- [ ] Deploy from `C:\barmatrix-app` only after explicit production release authorization.
+- [x] Deploy from `C:\barmatrix-app` to production.
 
 Review:
 
@@ -3573,4 +3573,51 @@ Review:
 - Production check:
   - `https://barmatrix.app/Jesuslovesyou` still returns `404 Not Found`.
   - This confirms the private branch push did not change production.
-- Remaining hard gate: no Vercel deploy, production provider mutation, or homepage pointer change was performed.
+- Remaining hard gate: no homepage pointer change was performed.
+
+## Implementation Slice 100 - Jesuslovesyou Production Deploy
+
+- [x] Verify the app worktree is clean before deploy.
+- [x] Verify `auronpep/barmatrix-app` is private before deploy.
+- [x] Verify Vercel project metadata points at `barmatrix-app`.
+- [x] Run the full Jesuslovesyou preflight before deploy.
+- [x] Deploy from the real path `C:\barmatrix-app` to Vercel production.
+- [x] Inspect the deployment and aliases.
+- [x] Run full production smoke for all `/Jesuslovesyou` release routes.
+- [x] Verify prefixed checkout routes return `200`.
+- [x] Verify the root homepage has not been pointed at `/Jesuslovesyou`.
+- [ ] Change the homepage pointer only after final approval.
+
+Review:
+
+- Pre-deploy state:
+  - App status: `## codex-review...origin/codex-review`.
+  - App head: `ea34952 Add Jesuslovesyou artifact hub`.
+  - App repo visibility: `auronpep/barmatrix-app PRIVATE`.
+  - Vercel project: `barmatrix-app`, project id `prj_LwBgARXTft6aeyoRwhIqEDWh5p4P`, org id `team_HKHemC6mfIOm0t6aROxfEOug`.
+  - Preflight command passed: `pwsh -NoProfile -File C:\PDJ\scripts\Check-JesuslovesyouReleasePreflight.ps1 -RunBuild`.
+  - Preflight result: `failed_checks: 0`, `app_ahead: 0`, `checked_routes: 106`.
+- Deploy:
+  - Command: `vercel deploy --prod --yes`.
+  - Workdir: `C:\barmatrix-app`.
+  - Deployment id: `dpl_8qyj6DtmijJbbJsetc461hrWyaWQ`.
+  - Deployment URL: `https://barmatrix-ls2ysdudr-sunnylee.vercel.app`.
+  - Inspector URL: `https://vercel.com/sunnylee/barmatrix-app/8qyj6DtmijJbbJsetc461hrWyaWQ`.
+  - Ready state: `READY`.
+  - Target: `production`.
+  - Aliases confirmed by `vercel inspect`: `https://barmatrix.app`, `https://www.barmatrix.app`, and project Vercel aliases.
+  - Build output included the `/Jesuslovesyou` static and SSG route group.
+- Production smoke:
+  - Command: `pwsh -NoProfile -File C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1 -BaseUrl https://barmatrix.app -OutputDir C:\PDJ\output\release\prod-smoke-after-deploy -Verify`.
+  - Generated artifacts:
+    - `C:\PDJ\output\release\prod-smoke-after-deploy\jesuslovesyou_release_manifest.json`
+    - `C:\PDJ\output\release\prod-smoke-after-deploy\jesuslovesyou_release_manifest.md`
+    - `C:\PDJ\output\release\prod-smoke-after-deploy\jesuslovesyou_release_verify.json`
+  - Production verifier result: `checked_routes: 106`, `checked_sitemap_routes: 104`, `failures: []`.
+  - Focused route probes:
+    - `https://barmatrix.app/Jesuslovesyou`: `200`, contains `Jesuslovesyou`.
+    - `https://barmatrix.app/Jesuslovesyou/checkout`: `200`, contains `Jesuslovesyou`.
+    - `https://barmatrix.app/Jesuslovesyou/checkout/success`: `200`, contains `Jesuslovesyou`.
+    - `https://barmatrix.app/sitemap.xml`: `200`, contains `Jesuslovesyou`.
+  - Homepage pointer check: `https://barmatrix.app/` returned `200`, did not contain the Jesuslovesyou front-door marker `Build the new BarMatrix factory beside the live site.`.
+- Remaining hard gate: no homepage pointer change was performed.
