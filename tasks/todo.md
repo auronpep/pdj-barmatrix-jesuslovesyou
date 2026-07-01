@@ -1896,3 +1896,45 @@ Review:
   - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.json`
   - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.csv`
   - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_seed_candidates.md`
+
+## Implementation Slice 59 - Con Law Seed Route Surface
+
+- [x] Confirm app route/data pattern from the existing Evidence pilot.
+- [x] Strip Con Law candidate data to public-safe fields only.
+- [x] Add Con Law seed data/helper and `/Jesuslovesyou/conlaw-pilot-01` route surface.
+- [x] Add Con Law routes to sitemap and homepage discovery.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, route content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-seed-candidates.json`
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-seed-candidates.ts`
+  - `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`
+  - `C:\barmatrix-app\app\Jesuslovesyou\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\[code]\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\seeds\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\seeds\[questionId]\page.tsx`
+  - `C:\barmatrix-app\app\sitemap.ts`
+- App local-only commit: `ee9ce43 Add Con Law seed route surface`.
+- Data boundary: app Con Law JSON includes only public-safe candidate fields and excludes local source paths.
+- Routes added:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01`
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds`
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/44040200`
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14293`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over new Con Law data/routes returned `NO_HITS`
+  - `npx tsx` import/count check returned `30` candidates, `30` question params, `6` code params, and `5` seed rows per selector.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Con Law seed list, review row `14293`, selector node `44040200`, and `sitemap.xml`.
+  - Route HTML contains the Con Law seed-list headline, count, Q14293 ID, due-process/equal-protection routing text, review-row title, selector code, and sitemap Con Law URLs.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-seeds-desktop.png` (`314686` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-seeds-mobile.png` (`489361` bytes)
