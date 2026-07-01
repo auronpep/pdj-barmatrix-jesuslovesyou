@@ -3028,3 +3028,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q14224 proof artifacts to `origin/main`.
+
+## Implementation Slice 87 - Q17574 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17574.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17574.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q17574 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 85]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `27` Con Law details, `30` seed candidates, and `3` remaining; next seed is Q17574 with seed key `B`, outline `44040502`, selector `44040502`/`exact`, and coverage group `first_amendment_speech_forum`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17574.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17574.md`.
+  - Source key: `A`; transformed/public detail key: `B` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040502` for Freedom of speech and expression.
+  - App seed key already matches the transformed key `B`; no seed JSON edit is expected.
+  - Current-law spot check: Near and New York Times v. United States support the heavy presumption against prior restraints; Constitution Annotated summarizes that any system of prior restraints carries a heavy presumption against constitutional validity.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q17574 detail returned clean and confirmed no original source wording leaked into the public payload.
+  - `npx tsx` import/count check returned `28` Con Law details, `30` seed candidates, and `2` remaining seeds without detail pages; next seed is Q18911. Q17574 has key `B`, selector `44040502`/`exact`, outline `44040502`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/17574`; route HTML contains `Advance Approval Is Prior Restraint`, `Christian podcaster in Houston`, the credited answer text, `B / correct`, and `GK-CONLAW-PRIOR-RESTRAINT-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17574`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q17574 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17574-desktop.png` (`1440x2488`, `213799` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17574-mobile.png` (`390x4890`, `211176` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `c90e352` (`Add Con Law Q17574 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q17574 proof artifacts to `origin/main`.
