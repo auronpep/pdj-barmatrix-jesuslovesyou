@@ -1975,3 +1975,36 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14293-desktop.png` (`537254` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14293-mobile.png` (`502659` bytes)
+
+## Implementation Slice 61 - Q14294 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14294.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14294.md`.
+- [x] Add public-safe Q14294 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `c236569 Add Con Law Q14294 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14294.md`.
+  - Read-only transformed CQ: `C:\FOC\Workspace\Finished\CQ14294.md`.
+  - Source key: `C`; transformed/public detail key: `B` after answer shuffle.
+  - Outline lock: selector/source/selected code `43020201`.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14294`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over `conlaw-question-details.ts` returned clean.
+  - `npx tsx` import/count check returned `2` Con Law details, `30` seed candidates, and `28` remaining seeds without detail pages; Q14294 has key `B`, `4` choices, `4` locks, `3` keys, and `3` drill seeds.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14294 detail route; route HTML contains `State Ground Ends Federal Review`, `Peter`, `Dismiss the writ`, `GK-CONLAW-STATE-GROUNDS-01`, and `independent and adequate state`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14294`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found the full case-study sections rendered on desktop/mobile without obvious blank state or overlap.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14294-desktop.png` (`610764` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14294-mobile.png` (`588896` bytes)
