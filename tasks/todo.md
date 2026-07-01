@@ -3108,3 +3108,44 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q18911 proof artifacts to `origin/main`.
+
+## Implementation Slice 89 - Q21147 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\21147.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ21147.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q21147 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 87]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `29` Con Law details, `30` seed candidates, and `1` remaining; next seed is Q21147 with seed key `B`, outline `44040502`, selector `44040502`/`exact`, and coverage group `first_amendment_speech_forum`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\21147.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ21147.md`.
+  - Source key: `C`; transformed/public detail key: `B` after answer shuffle.
+  - Source row's `Outline_code` is `44040304`, but that conflicts with the item body because the question tests First Amendment commercial speech, not equal protection intermediate scrutiny.
+  - Transformed CQ and app seed correct the selector, outline, and source-outline values to `44040502` for Freedom of speech and expression; the public app detail should follow the corrected seed values.
+  - App seed key already matches the transformed key `B`; no seed JSON edit is expected.
+  - Current-law spot check: Central Hudson states the threshold lawful-activity gate for commercial speech; Pittsburgh Press confirms advertising for illegal commercial activity lacks First Amendment protection.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over the Q21147 detail object returned clean and confirmed no old drug-market wording leaked into the public payload.
+  - `npx tsx` import/count check returned `30` Con Law details, `30` seed candidates, and `0` remaining seeds without detail pages. Q21147 has key `B`, selector `44040502`/`exact`, outline `44040502`, source-outline `44040502`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, source-outline values, and `has_finished_transform: true` match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/21147`; route HTML contains `Central Hudson Has A Front Door`, `private Christian bookstore`, the credited answer text, `B / correct`, and `GK-CONLAW-COMMERCIAL-SPEECH-ILLEGAL-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/21147`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q21147 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q21147-desktop.png` (`1440x2622`, `234610` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q21147-mobile.png` (`390x5336`, `236750` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `468526d` (`Add Con Law Q21147 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q21147 proof artifacts to `origin/main`.
