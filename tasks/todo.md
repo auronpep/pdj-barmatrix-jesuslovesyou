@@ -148,3 +148,42 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory.json`
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory.csv`
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory_summary.md`
+
+## Implementation Slice 5 - Evidence Seed Candidates
+
+- [x] Extend `C:\PDJ\scripts\Build-EvidencePilotInventory.ps1` to emit deterministic seed candidates.
+- [x] Select 5 seed candidates for each of the 10 Evidence pilot outline codes.
+- [x] Add candidate fields for `source_outline_code`, `coverage_group`, `seed_bucket`, `correct_percent`, source paths, and review status.
+- [x] Keep source folders read-only:
+  - `C:\FOC\Workspace\QBank`
+  - `C:\FOC\Workspace\Finished`
+  - `C:\CCG\Finished`
+- [x] Verify required coverage groups have candidate representation.
+- [x] Mark all rows as candidate-only pending human legal review.
+
+## Implementation Evidence - Evidence Seed Candidates - 2026-07-01
+
+- Script: `C:\PDJ\scripts\Build-EvidencePilotInventory.ps1`.
+- Command passed: `pwsh -NoProfile -File C:\PDJ\scripts\Build-EvidencePilotInventory.ps1 -Verify`.
+- Inventory rows: 272.
+- Seed candidates: 50.
+- Code distribution: 5 candidates for each selected code:
+  - `31010107`, `31010406`, `31010407`, `31010503`, `32020302`, `32020404`, `33040203`, `33040301`, `33040302`, `35030304`
+- Coverage group counts:
+  - `adjacent_pilot_code`: 10
+  - `fre_403_insurance_policy_purpose`: 10
+  - `hearsay_exception`: 10
+  - `non_hearsay_purpose`: 5
+  - `preliminary_question_judge_jury`: 5
+  - `witness_truthfulness_bias`: 10
+- Seed bucket counts:
+  - `clean_teaching`: 23
+  - `hard_or_high_pick_rate_trap`: 2
+  - `medium_friction`: 7
+  - `needs_human_review`: 11
+  - `recode_or_ambiguous`: 7
+- Recode example verified: Q22198 is selected as `33040301` from source `35030200` and tagged `recode_or_ambiguous`.
+- Artifacts:
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.json`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.csv`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.md`
