@@ -2660,3 +2660,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q17170 proof artifacts to `origin/main`.
+
+## Implementation Slice 78 - Q14242 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14242.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14242.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q14242 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 76]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `18` Con Law details, `30` seed candidates, and `12` remaining; next seed is Q14242 with seed key `A`, corrected outline `44040305`, selector `44040300`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14242.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14242.md`.
+  - Source key: `B`; transformed/public detail key: `A` after answer shuffle.
+  - Raw source row lists outline code `44040301`, but the tested doctrine is rational-basis review; transformed CQ and app seed use corrected outline code `44040305`.
+  - App seed selector is parent `44040300` with `child_code` match to corrected outline `44040305`; no seed JSON edit is expected.
+  - Current-law spot check: Dukes upheld a local economic vendor ordinance with a grandfather clause under rational-basis review; Williamson supports step-by-step regulation in economic classifications; Constitution Annotated states ordinary non-suspect, non-fundamental-right classifications receive rational-basis review.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q14242 detail returned clean.
+  - `npx tsx` import/count check returned `19` Con Law details, `30` seed candidates, and `11` remaining seeds without detail pages; Q14242 has key `A`, selector `44040300`/`child_code`, corrected outline `44040305`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and corrected source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14242`; route HTML contains `Grandfather Lines Get Rational Basis`, `linen-mending cart`, `rational basis test`, and `GK-CONLAW-EP-RATIONAL-BASIS-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14242`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q14242 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14242-desktop.png` (`1440x2637`, `250179` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14242-mobile.png` (`390x5405`, `246855` bytes). Pixel probe found non-white rendered content in both files.
+- Local app commit: `b7feab1` (`Add Con Law Q14242 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q14242 proof artifacts to `origin/main`.
