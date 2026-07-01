@@ -2076,3 +2076,42 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22590-desktop.png` (`1440x4282`, `504349` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22590-mobile.png` (`390x8540`, `477062` bytes)
+
+## Implementation Slice 64 - Q22611 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22611.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ22611.md`.
+- [x] Identify transform/body key mismatch: source key `A`; transformed body/YAML/JSON key `B`; transform frontmatter and app seed record incorrectly report `C`.
+- [x] Add public-safe Q22611 Con Law detail payload and correct app seed key to `B`.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-seed-candidates.json`
+- App local-only commit: `7769c26 Add Con Law Q22611 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\22611.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ22611.md`.
+  - Source key: `A`; transformed body/YAML/JSON key: `B` after answer shuffle.
+  - Transform frontmatter and prior app seed record incorrectly reported `C`; app seed key corrected to `B`.
+  - Public detail keeps the tested ripeness mechanics but uses a state-actor roster frame, because the CQ private-church surface created an avoidable state-action issue outside the tested rule.
+  - Outline lock: selector/source/selected code `43020201`.
+  - Current-law spot check: Laird v. Tatum confirms that a subjective chilling effect from a data-gathering practice, without objective harm or a specific future threat, is not a justiciable controversy.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/22611`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts lib/jesuslovesyou/conlaw-seed-candidates.json`
+  - public-safe/source-leak scan over Q22611 detail returned clean.
+  - `npx tsx` import/count check returned `5` Con Law details, `30` seed candidates, and `25` remaining seeds without detail pages; Q22611 has key `B`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `B`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q22611 detail route; route HTML contains `Speculative Chill Is Not Ripe`, `Community Participation Roster`, `The action is unripe`, `GK-CONLAW-RIPENESS-SPECULATIVE-CHILL-01`, and `Unripe means too early`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/22611`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22611-desktop.png` (`1440x4339`, `496303` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22611-mobile.png` (`390x8409`, `473507` bytes)
