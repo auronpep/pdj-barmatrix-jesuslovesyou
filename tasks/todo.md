@@ -50,6 +50,7 @@ Target route prefix: `/Jesuslovesyou/`
 ## Implementation Evidence - 2026-07-01
 
 - App repo touched: `C:\barmatrix-app` on branch `codex-review`; changes are local only and not pushed.
+- App local commit: `9fc65b0 Add Jesuslovesyou pilot route`.
 - Added data module: `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`.
 - Added route: `C:\barmatrix-app\app\Jesuslovesyou\page.tsx`.
 - Added checkout wrapper: `C:\barmatrix-app\app\Jesuslovesyou\checkout\page.tsx`.
@@ -72,3 +73,27 @@ Target route prefix: `/Jesuslovesyou/`
 
 Preparation complete. Private GitHub registration and initial push complete.
 Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed checkout wrappers are locally verified.
+
+## Implementation Slice 2 - Evidence Pilot Page
+
+- [x] Add `/Jesuslovesyou/evidence-pilot-01` route.
+- [x] Reuse existing `pilot-data.ts` for Evidence page modules, LeadMe run sample, and Outline Atlas node sample.
+- [x] Link `/Jesuslovesyou` to the Evidence pilot route.
+- [x] Add sitemap entry for `/Jesuslovesyou/evidence-pilot-01`.
+- [x] Verify lint, build, HTTP route response, and visual smoke screenshot.
+
+## Implementation Evidence - Evidence Pilot Page - 2026-07-01
+
+- App local commit: `16f44a8 Add Evidence pilot route`.
+- Added route: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\page.tsx`.
+- Updated data module: `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`.
+- Updated homepage link: `C:\barmatrix-app\app\Jesuslovesyou\page.tsx`.
+- Updated sitemap: `C:\barmatrix-app\app\sitemap.ts`.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01`.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou`
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01`
+- Playwright screenshot:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-pilot-desktop.png`
