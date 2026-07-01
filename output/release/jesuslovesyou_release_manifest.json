@@ -1,0 +1,664 @@
+{
+  "generated_at": "2026-07-01T11:54:59",
+  "route_prefix": "/Jesuslovesyou",
+  "app_root": "C:\\barmatrix-app",
+  "release_state": "local_verified_release_candidate",
+  "hard_gates": [
+    "Push C:\\barmatrix-app only after explicit release authorization.",
+    "Deploy from real path C:\\barmatrix-app, not the C:\\BMO junction.",
+    "Verify Vercel project identity before deploy.",
+    "Smoke production /Jesuslovesyou routes before changing the homepage pointer.",
+    "Preserve prefixed checkout attribution and auth behavior."
+  ],
+  "counts": {
+    "routes_total": 106,
+    "sitemap_routes": 104,
+    "checkout_routes_not_in_sitemap": 2,
+    "evidence_case_studies": 50,
+    "conlaw_case_studies": 30,
+    "evidence_outline_nodes": 10,
+    "conlaw_outline_nodes": 6,
+    "reusable_keys": 243,
+    "leadme_steps": 598,
+    "drill_seeds": 240,
+    "answer_flow_steps": 612
+  },
+  "routes": [
+    {
+      "path": "/Jesuslovesyou",
+      "kind": "front_door",
+      "sitemap": true,
+      "expected_text": "Build the new BarMatrix factory beside the live site."
+    },
+    {
+      "path": "/Jesuslovesyou/artifacts",
+      "kind": "artifact_hub",
+      "sitemap": true,
+      "expected_text": "JESUSLOVESYOU ARTIFACTS"
+    },
+    {
+      "path": "/Jesuslovesyou/checkout",
+      "kind": "checkout",
+      "sitemap": false,
+      "expected_text": ""
+    },
+    {
+      "path": "/Jesuslovesyou/checkout/success",
+      "kind": "checkout_success",
+      "sitemap": false,
+      "expected_text": ""
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01",
+      "kind": "pilot",
+      "sitemap": true,
+      "expected_text": "EVIDENCE-PILOT-01"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/qa-report",
+      "kind": "qa_report",
+      "sitemap": true,
+      "expected_text": "QA Counts"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds",
+      "kind": "seed_index",
+      "sitemap": true,
+      "expected_text": "SEED"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040203",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "33040203"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010406",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "31010406"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010503",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "31010503"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010107",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "31010107"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/32020302",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "32020302"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/32020404",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "32020404"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040301",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "33040301"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/33040302",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "33040302"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/35030304",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "35030304"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/31010407",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "31010407"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22198",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Dying Declaration: Civil-or-Criminal Scope"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14823",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Witness Truthfulness: Bias vs. Specific Acts"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14824",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Preliminary Questions: Judge May Consider Hearsay"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14763",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Non-Hearsay Purpose: Notice Is Not Truth"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14772",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Non-Hearsay Purpose: Identity from a Name"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14778",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Non-Hearsay Purpose: Reason for Refusal"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14808",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Non-Hearsay Purpose: Effect on the Listener"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14836",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Witness Truthfulness: Extrinsic Evidence Bar"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14848",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Witness Truthfulness: Specific Dishonest Acts on Cross"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14844",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Witness Truthfulness: Cross vs. Extrinsic Proof"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14807",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Non-Hearsay Purpose: Notice Needs a Limiting Instruction"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22232",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Witness Truthfulness: Religion Is Not a Credibility Lever"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14765",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Bias Impeachment: Leniency Promise"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14826",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Bias Impeachment: Hearsay Declarant"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14830",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Insurance Evidence: Bias Only"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14829",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Preliminary Questions: Confession Hearing"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14834",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Preliminary Questions: Dying Declaration Foundation"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14835",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Preliminary Questions: Expert Qualification"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14837",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Preliminary Questions: Dying Declaration Hearing"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14825",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Refreshing Recollection: Before vs. During"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17318",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Refreshing Recollection: On-Stand Access"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/18076",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Refreshing Recollection: Any Material Can Jog Memory"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22211",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Business Records vs. Past Recollection Recorded"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22227",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Refreshing Recollection: Pretrial Notes Inspection"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14840",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Bias: Impeaching the Hearsay Declarant"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14852",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Bias: Motive Is Not Truthfulness Character"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14872",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Rule 403: Fit Before Drama"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14875",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Rule 403: The Missing Factor"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14899",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Polygraph Reference: Strike the Answer"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17130",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Bias Proof Without a Mini-Trial"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/18503",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Stipulation Reduces the 403 Need"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14873",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "404(b): Purpose Beats Propensity"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14883",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "404(b): Test Both Offered Acts"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14896",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "404(b): Identity Needs a Bridge"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/19579",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Entrapment Opens Predisposition Proof"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22231",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Plan Theory Beats Propensity"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14757",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Transcript Layer Fails First"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14767",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Own-Fault Statement Against Interest"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14777",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Double Hearsay, One Layer At A Time"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14781",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Confession With A Witness"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14769",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "One Recording, Two Exceptions"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14791",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Read Statements, Not the Handbook"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22150",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Stress Beats Mere Closeness"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22152",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Treatment Purpose Unlocks the Exception"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22157",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Intent Statement Beats Excited-Utterance Bait"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/14863",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Insurance Purpose Opens Ownership Proof"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17192",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Insurance Reassurance Is Not Fault Proof"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/17761",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Opening The Door To No Insurance Proof"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22156",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Insurance Policy Proves Ownership"
+    },
+    {
+      "path": "/Jesuslovesyou/evidence-pilot-01/seeds/22229",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Insurance Reassurance Is Still Excluded"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01",
+      "kind": "pilot",
+      "sitemap": true,
+      "expected_text": "CONLAW-PILOT-01"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/qa-report",
+      "kind": "qa_report",
+      "sitemap": true,
+      "expected_text": "QA Counts"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds",
+      "kind": "seed_index",
+      "sitemap": true,
+      "expected_text": "SEED"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040100",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "44040100"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040502",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "44040502"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040501",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "44040501"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040300",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "44040300"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/44040200",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "44040200"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/43020201",
+      "kind": "outline_node",
+      "sitemap": true,
+      "expected_text": "43020201"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14293",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Mootness Ends the Streaming Fight"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14294",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "State Ground Ends Federal Review"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20714",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Taxpayer Standing Has a Narrow Door"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22590",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Ripeness Before Merits"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22611",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Speculative Chill Is Not Ripe"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14231",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "State Action Before Scrutiny"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14233",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Public Money Does Not Decide the Act"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14237",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Funding Is Not the Firing"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14275",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Public Venue Is Not State Action"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/18457",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Threshold Before Scrutiny"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17114",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Incorporation Before Proportionality"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/19280",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Guideposts, Not Jury Free Rein"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14225",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Fair Hearing Means Testing The Witnesses"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17163",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Negligence Is Not Due Process"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/19025",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Stigma Needs A Plus"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17157",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Pregnancy Is Not Automatic Intermediate Scrutiny"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14234",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "No Trigger Means Rational Basis"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17170",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Strict Scrutiny Is Still A Test"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14242",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Grandfather Lines Get Rational Basis"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17680",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Animus Fails Rational Basis"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14236",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Free Exercise Needs Targeting"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20153",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Neutral Secular Aid Survives"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20231",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Belief Cannot Be Punished"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/20981",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Public Display Needs Context"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/22592",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Sincerity Yes, Reasonableness No"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14223",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Commercial Speech Needs Fit"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/14224",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Content Neutral Still Needs Fit"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/17574",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Advance Approval Is Prior Restraint"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/18911",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Listener Anger Is Not Neutral"
+    },
+    {
+      "path": "/Jesuslovesyou/conlaw-pilot-01/seeds/21147",
+      "kind": "case_study",
+      "sitemap": true,
+      "expected_text": "Central Hudson Has A Front Door"
+    }
+  ]
+}

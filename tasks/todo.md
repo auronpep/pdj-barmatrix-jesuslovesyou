@@ -3433,3 +3433,45 @@ Review:
   - `git -C C:\PDJ diff --check` passed for the new scripts and generated text deliverables.
   - PDJ CodeGraph status after sync: `14` files, `6` nodes, `10` edges, up to date.
 - Remaining hard gate: these are preparation/package artifacts only. No app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
+
+## Implementation Slice 96 - Jesuslovesyou Release Manifest
+
+- [x] Add a repeatable route/release manifest builder.
+- [x] Generate JSON and Markdown release manifests for the local `/Jesuslovesyou/` release candidate.
+- [x] Verify every manifest route against the local preview server.
+- [x] Verify sitemap inclusion for every sitemap-indexed `/Jesuslovesyou/` route.
+- [x] Record explicit hard gates for app push, Vercel deploy, production smoke, and homepage pointer change.
+
+Review:
+
+- Generator:
+  - `C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1`
+- Generated artifacts:
+  - `C:\PDJ\output\release\jesuslovesyou_release_manifest.json` (`20586` bytes).
+  - `C:\PDJ\output\release\jesuslovesyou_release_manifest.md` (`7825` bytes).
+  - `C:\PDJ\output\release\jesuslovesyou_release_verify.json` (`124` bytes).
+- Command passed:
+  - `pwsh -NoProfile -File C:\PDJ\scripts\Build-JesuslovesyouReleaseManifest.ps1 -Verify`
+- Manifest counts:
+  - Total local candidate routes: `106`.
+  - Sitemap-indexed routes: `104`.
+  - Checkout routes intentionally not in sitemap: `2`.
+  - Evidence case studies: `50`.
+  - Con Law case studies: `30`.
+  - Outline nodes: `16`.
+  - Reusable keys: `243`.
+  - LeadMe steps: `598`.
+  - Drill seeds: `240`.
+  - Answer-flow steps: `612`.
+- Verification proof:
+  - Local base URL: `http://127.0.0.1:3001`.
+  - `jesuslovesyou_release_verify.json` reports `checked_routes: 106`, `checked_sitemap_routes: 104`, and `failures: []`.
+  - `git -C C:\PDJ diff --check -- scripts/Build-JesuslovesyouReleaseManifest.ps1 output/release/jesuslovesyou_release_manifest.json output/release/jesuslovesyou_release_manifest.md output/release/jesuslovesyou_release_verify.json` passed.
+  - PDJ CodeGraph status after sync remained up to date.
+- Hard gates retained in the manifest:
+  - Push `C:\barmatrix-app` only after explicit release authorization.
+  - Deploy from real path `C:\barmatrix-app`, not the `C:\BMO` junction.
+  - Verify Vercel project identity before deploy.
+  - Smoke production `/Jesuslovesyou` routes before changing the homepage pointer.
+  - Preserve prefixed checkout attribution and auth behavior.
+- Remaining hard gate: no app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
