@@ -2275,3 +2275,45 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q14275 proof artifacts to `origin/main`.
+
+## Implementation Slice 69 - Q18457 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\18457.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ18457.md`.
+- [x] Reconcile source key, transformed key, seed key, and outline code.
+- [x] Add public-safe Q18457 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [ ] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 67]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `9` Con Law details, `30` seed candidates, and `21` remaining; next seed is Q18457 with seed key `C`, outline `44040100`, and coverage group `state_action`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `f65229a Add Con Law Q18457 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\18457.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ18457.md`.
+  - Source key: `A`; transformed/public detail key: `C` after answer shuffle.
+  - Raw source row listed outline code `44040300`, while the transformed CQ and app seed classify Q18457 under `44040100` State Action Requirement.
+  - App seed key already matched the transformed key `C`; no seed JSON edit was needed.
+  - Current-law spot check: Constitution Annotated, Civil Rights Cases, Jackson, Burton, and Brentwood support the threshold frame that the Fourteenth Amendment reaches government action, and seemingly private conduct requires a close enough attribution bridge before scrutiny tiers matter.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/18457`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q18457 detail returned clean.
+  - `npx tsx` import/count check returned `10` Con Law details, `30` seed candidates, and `20` remaining seeds without detail pages; Q18457 has key `C`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `C`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q18457 detail route; route HTML contains `Threshold Before Scrutiny`, the credited answer text, and `GK-CONSTITUTIONAL-LAW-LYDIA-BOOK-CLUB-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/18457`.
+  - Playwright CLI captured desktop and mobile full-page screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q18457-desktop.png` (`1440x4341`, `497315` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q18457-mobile.png` (`390x8428`, `467012` bytes)
