@@ -2580,3 +2580,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q17157 proof artifacts to `origin/main`.
+
+## Implementation Slice 76 - Q14234 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14234.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14234.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q14234 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 74]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `16` Con Law details, `30` seed candidates, and `14` remaining; next seed is Q14234 with seed key `B`, outline `44040301`, selector `44040300`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14234.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14234.md`.
+  - Source key: `D`; transformed/public detail key: `B` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040301` for Fundamental rights.
+  - App seed selector is parent `44040300` with `child_code` match to transformed outline `44040301`; no seed JSON edit is expected.
+  - Current-law spot check: Cleburne confirms ordinary social/economic equal-protection review uses rational-basis scrutiny absent a heightened trigger; Lindsey rejects a constitutional guarantee of particular housing access; Heller places the rational-basis burden on the challenger; the Fourteenth Amendment supplies the Equal Protection Clause text.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q14234 detail returned clean.
+  - `npx tsx` import/count check returned `17` Con Law details, `30` seed candidates, and `13` remaining seeds without detail pages; Q14234 has key `B`, selector `44040300`/`child_code`, outline `44040301`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, and outline match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14234`; route HTML contains `No Trigger Means Rational Basis`, `Barnabas House`, `Daniel must prove`, and `GK-CONSTITUTIONAL_LAW-RATIONAL-BASIS-REENTRY-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14234`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the Q17157 fallback because direct Chromium route navigation is unreliable in this app session; desktop and mobile PNGs both render the full Q14234 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14234-desktop.png` (`1440x2730`, `250354` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14234-mobile.png` (`390x5585`, `247717` bytes). Pixel probe found non-white rendered content in both files.
+- Local app commit: `063617a` (`Add Con Law Q14234 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q14234 proof artifacts to `origin/main`.
