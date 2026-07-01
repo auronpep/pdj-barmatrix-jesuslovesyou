@@ -9,7 +9,7 @@ Target route prefix: `/Jesuslovesyou/`
 - [x] Create project scaffolding: `tasks`, `.codex`, `docs`, `AGENTS.md`, `.gitignore`.
 - [x] Inventory and read every incoming project document.
 - [x] Initialize local Git repository.
-- [ ] Register private GitHub repository and verify it is private before any push.
+- [x] Register private GitHub repository and verify it is private before any push.
 - [x] Initialize CodeGraph for `C:\PDJ` and record status.
 - [x] Review `C:\BMO`, `C:\barmatrix-app`, and `C:\barmatrix-api` read-only for plumbing.
 - [x] Write first implementation plan for `incoming\After_Setup_firstgroup.md`.
@@ -29,6 +29,9 @@ Target route prefix: `/Jesuslovesyou/`
 - Frontend stack: `C:\barmatrix-app`, Next.js 16.2.6, React 19.2.4, Vercel project `barmatrix-app`.
 - Backend stack: `C:\barmatrix-api`, Express + TypeScript + mysql2 + Stripe + Clerk + Resend.
 - Prep report: `docs\rebuild-prep-report.md`.
+- Private GitHub repo: `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou`.
+- GitHub visibility verified: `PRIVATE`.
+- Initial pushed commit: `db51ffd44f60555759306d2b4804c0e003615ee8`.
 
 ## Gates
 
@@ -38,4 +41,4 @@ Target route prefix: `/Jesuslovesyou/`
 
 ## Review
 
-Preparation complete. GitHub private registration and push still pending.
+Preparation complete. Private GitHub registration and initial push complete.
