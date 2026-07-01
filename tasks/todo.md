@@ -836,3 +836,32 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14829-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14829-mobile.png`
+
+## Implementation Slice 24 - Q14834 Dying-Declaration Foundation Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14834.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14834.md`.
+- [x] Add public-safe Q14834 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14834.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `c0d5159 Add Evidence Q14834 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14834.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14834.md`.
+- Q14834 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14834`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14834`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14834`
+  - Playwright DOM checks found 8 required Q14834 strings.
+  - App data count found `17` authored case studies, `50` seed candidates, and `33` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14834-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14834-mobile.png`
