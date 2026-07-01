@@ -2864,3 +2864,43 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q20231 proof artifacts to `origin/main`.
+
+## Implementation Slice 83 - Q20981 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\20981.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ20981.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q20981 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 81]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `23` Con Law details, `30` seed candidates, and `7` remaining; next seed is Q20981 with seed key `A`, outline `44040501`, selector `44040501`/`exact`, and coverage group `free_exercise`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\20981.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ20981.md`.
+  - Source key: `C`; transformed/public detail key: `A` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040501`; student-facing issue is Establishment Clause public religious display analysis even though the seed coverage bucket is `free_exercise`.
+  - App seed key already matches the transformed key `A`; no seed JSON edit is expected.
+  - Current-law spot check: American Legion supports a history/context approach for longstanding religious public monuments; Kennedy rejects Lemon/endorsement as the controlling shortcut and uses historical practices and understandings; Constitution Annotated summarizes Establishment Clause historical-practices analysis.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q20981 detail returned clean and confirmed no original cross-shaped war memorial/soldier-memorial wording leaked into the public payload.
+  - `npx tsx` import/count check returned `24` Con Law details, `30` seed candidates, and `6` remaining seeds without detail pages; Q20981 has key `A`, selector `44040501`/`exact`, outline `44040501`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/20981`; route HTML contains `Public Display Needs Context`, `Lydia Station plaza`, the credited answer text, and `GK-CONLAW-RELIGIOUS-SYMBOLS-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/20981`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q20981 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20981-desktop.png` (`1440x2581`, `227657` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20981-mobile.png` (`390x4988`, `224317` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `0d99440` (`Add Con Law Q20981 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q20981 proof artifacts to `origin/main`.
