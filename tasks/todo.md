@@ -1764,3 +1764,35 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17192-desktop.png` (`484740` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17192-mobile.png` (`460054` bytes)
+
+## Implementation Slice 55 - Q17761 Evidence Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17761.md`.
+- [x] Confirm no transformed CQ file exists for Q17761.
+- [x] Add public-safe source-derived Q17761 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q17761.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `fa9d207 Add Evidence Q17761 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\17761.md`.
+- Transform boundary: no `C:\FOC\Workspace\Finished\CQ17761.md` exists; seed metadata has `has_finished_transform: false`, so the detail payload is source-derived.
+- Key reconciliation: source key `A`; source-derived/public detail key `A`.
+- Q17761 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/17761`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/17761`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/17761`
+  - Route HTML contains the Q17761 title, stem signal, correct answer text, and opened-door insurance rebuttal rule.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+  - App data count found `48` authored case studies, `50` seed candidates, and `2` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17761-desktop.png` (`552006` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17761-mobile.png` (`510538` bytes)
