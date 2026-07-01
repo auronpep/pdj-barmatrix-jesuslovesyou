@@ -2539,3 +2539,44 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q19025 proof artifacts to `origin/main`.
+
+## Implementation Slice 75 - Q17157 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17157.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17157.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q17157 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 73]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `15` Con Law details, `30` seed candidates, and `15` remaining; next seed is Q17157 with seed key `C`, outline `44040300`, selector `44040300`/`exact`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17157.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17157.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040300` for Equal Protection.
+  - App seed key already matched the transformed key `C`; no seed JSON edit is expected.
+  - Current-law spot check: Geduldig controls the constitutional Equal Protection rule that pregnancy classification is not automatically sex classification; the Pregnancy Discrimination Act supplies a separate Title VII statutory rule; the Fourteenth Amendment supplies the Equal Protection Clause text.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q17157 detail returned clean.
+  - `npx tsx` import/count check returned `16` Con Law details, `30` seed candidates, and `14` remaining seeds without detail pages; Q17157 has key `C`, selector `44040300`/`exact`, outline `44040300`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key and selector also match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/17157`; route HTML contains `Pregnancy Is Not Automatic Intermediate Scrutiny`, the credited answer, and `GK-CONLAW-EP-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17157`.
+  - Chromium direct navigation timed out on the route after the HTTP checks passed, so screenshot proof was taken from the verified route HTML with scripts stripped; desktop and mobile PNGs both render the full Q17157 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17157-desktop.png` (`1440x2804`, `247027` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17157-mobile.png` (`390x5300`, `239853` bytes). Pixel probe found non-white rendered content in both files.
+- Local app commit: `d91e8a0` (`Add Con Law Q17157 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q17157 proof artifacts to `origin/main`.
