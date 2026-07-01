@@ -2008,3 +2008,37 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14294-desktop.png` (`610764` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14294-mobile.png` (`588896` bytes)
+
+## Implementation Slice 62 - Q20714 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\20714.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ20714_updated.md`.
+- [x] Add public-safe Q20714 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `d68bdcb Add Con Law Q20714 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\20714.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ20714_updated.md`.
+  - Source key: `B`; transformed/public detail key: `D` after answer shuffle.
+  - Outline lock: selector/source/selected code `43020201`.
+  - Current-law spot check: Constitution Annotated and Flast v. Cohen confirm the narrow federal taxpayer standing exception for congressional spending challenged under the Establishment Clause.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/20714`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over `conlaw-question-details.ts` returned clean.
+  - `npx tsx` import/count check returned `3` Con Law details, `30` seed candidates, and `27` remaining seeds without detail pages; Q20714 has key `D`, `4` choices, `4` locks, `3` keys, and `3` drill seeds.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q20714 detail route; route HTML contains `Taxpayer Standing Has a Narrow Door`, `Lydia`, `specific constitutional limit`, `GK-CONLAW-FLAST-SPENDING-01`, and `taxpayer-standing exception`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/20714`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found the full case-study sections rendered on desktop/mobile without obvious blank state or overlap.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20714-desktop.png` (`543410` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q20714-mobile.png` (`512373` bytes)
