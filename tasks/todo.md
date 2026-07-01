@@ -722,3 +722,31 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22232-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22232-mobile.png`
+
+## Implementation Slice 20 - Q14765 Bias Leniency-Promise Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14765.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14765.md`.
+- [x] Add public-safe Q14765 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14765.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `8ebf173 Add Evidence Q14765 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14765.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14765.md`.
+- Q14765 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14765`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14765`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14765`
+  - Playwright DOM checks found 8 required Q14765 strings, `13` authored case-study links, and `37` review rows.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14765-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14765-mobile.png`
