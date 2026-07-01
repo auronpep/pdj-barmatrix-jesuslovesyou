@@ -2904,3 +2904,44 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q20981 proof artifacts to `origin/main`.
+
+## Implementation Slice 84 - Q22592 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22592.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ22592.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q22592 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 82]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `24` Con Law details, `30` seed candidates, and `6` remaining; next seed is Q22592 with seed key `C`, outline `44040501`, selector `44040501`/`exact`, and coverage group `free_exercise`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\22592.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ22592.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040501` for Freedom of religion.
+  - App seed key already matches the transformed key `C`; no seed JSON edit is expected.
+  - Public-copy guardrail: soften the public scenario from explicit Christian house-fellowship animal-cruelty framing to a neutral private faith-fellowship ceremony while preserving the forbidden reasonableness inquiry.
+  - Current-law spot check: Ballard confirms courts may not decide truth or falsity of religious belief; Thomas confirms religious beliefs need not be acceptable, logical, consistent, or comprehensible to others; Constitution Annotated summarizes laws regulating religious belief.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q22592 detail returned clean and confirmed no original chicken wording or explicit Christian house-fellowship animal-cruelty framing leaked into the public payload.
+  - `npx tsx` import/count check returned `25` Con Law details, `30` seed candidates, and `5` remaining seeds without detail pages; Q22592 has key `C`, selector `44040501`/`exact`, outline `44040501`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/22592`; route HTML contains `Sincerity Yes, Reasonableness No`, `private faith-fellowship ceremony`, the credited answer text, and `GK-CONLAW-FREEEX-REASONABLENESS-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/22592`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q22592 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22592-desktop.png` (`1440x2464`, `214668` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q22592-mobile.png` (`390x4809`, `215593` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `362d8ce` (`Add Con Law Q22592 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q22592 proof artifacts to `origin/main`.
