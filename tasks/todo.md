@@ -1938,3 +1938,40 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-seeds-desktop.png` (`314686` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-seeds-mobile.png` (`489361` bytes)
+
+## Implementation Slice 60 - Q14293 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14293.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14293.md`.
+- [x] Add public-safe Q14293 Con Law detail payload to the app.
+- [x] Render Q14293 as a full case study on the existing Con Law seed route.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\seeds\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\seeds\[questionId]\page.tsx`
+- App local-only commit: `4658fb8 Add Con Law Q14293 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14293.md`.
+  - Read-only transformed CQ: `C:\FOC\Workspace\Finished\CQ14293.md`.
+  - Source key: `C`; transformed/public detail key: `B` after answer shuffle.
+  - Outline lock: selector/source/selected code `43020201`.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14293`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe/source-leak scan over the three changed app files returned clean.
+  - `npx tsx` import/count check returned `1` Con Law detail; Q14293 has key `B`, `4` choices, `4` locks, `3` keys, and `3` drill seeds.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14293 detail route; route HTML contains `Mootness Ends the Streaming Fight`, `Timothy`, `Grant the motion`, `GK-CONLAW-MOOT-01`, and `Article III`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14293`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found the full case-study sections rendered on desktop/mobile without obvious blank state or overlap.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14293-desktop.png` (`537254` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14293-mobile.png` (`502659` bytes)
