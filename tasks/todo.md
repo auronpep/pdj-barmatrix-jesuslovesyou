@@ -2185,3 +2185,45 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14233-desktop.png` (`1440x4724`, `586345` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14233-mobile.png` (`390x9340`, `554665` bytes)
+
+## Implementation Slice 67 - Q14237 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14237.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14237.md`.
+- [x] Reconcile source key, transformed key, seed key, and outline code.
+- [x] Add public-safe Q14237 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [ ] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 65]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `7` Con Law details, `30` seed candidates, and `23` remaining; next seed is Q14237 with seed key `C`, outline `44040100`, and coverage group `state_action`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `c46d765 Add Con Law Q14237 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14237.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14237.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040100` for State Action Requirement.
+  - App seed key already matched the transformed key `C`; no seed JSON edit was needed.
+  - Current-law spot check: Constitution Annotated, Rendell-Baker v. Kohn, and Blum v. Yaretsky confirm that state accreditation, regulation, and public funding do not make a private school's employment decision state action without state responsibility for the challenged firing.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14237`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q14237 detail returned clean.
+  - `npx tsx` import/count check returned `8` Con Law details, `30` seed candidates, and `22` remaining seeds without detail pages; Q14237 has key `C`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `C`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14237 detail route; route HTML contains `Funding Is Not the Firing` and `GK-CONLAW-STATE-ACTION-FUNDING-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14237`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14237-desktop.png` (`1440x4493`, `568746` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14237-mobile.png` (`390x9105`, `540960` bytes)
