@@ -219,3 +219,40 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seeds-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seeds-mobile.png`
+
+## Implementation Slice 7 - Q22198 Case Study Surface
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\22198.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ22198.md`.
+- [x] Add public-safe Q22198 detail payload to the app.
+- [x] Add `/Jesuslovesyou/evidence-pilot-01/seeds/22198`.
+- [x] Link Q22198 from the seed candidate page.
+- [x] Add the Q22198 detail route to `sitemap.xml`.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - Q22198 Case Study Surface - 2026-07-01
+
+- App local commit: `7319a0f Add Evidence Q22198 case study`.
+- App data added: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App route added: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\seeds\[questionId]\page.tsx`.
+- Source row read: `C:\FOC\Workspace\QBank\22198.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ22198.md`.
+- Public-safe data check passed: no `C:\`, `QBank`, `Finished`, `qbank_path`, `transform_path`, or `selected_path` strings in the new app payload/route.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]` with `/Jesuslovesyou/evidence-pilot-01/seeds/22198`.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/22198`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Seed page link verified: `/Jesuslovesyou/evidence-pilot-01/seeds` contains `/Jesuslovesyou/evidence-pilot-01/seeds/22198`.
+- Rendered DOM verification passed:
+  - `Dying Declaration: Civil-or-Criminal Scope` present
+  - source code `35030200` present
+  - `GK-EVIDENCE-DYING-DECL-01` present
+  - `LeadMe steps` present
+  - `Scope Flip` drill present
+  - `C / correct` present
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22198-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q22198-mobile.png`
