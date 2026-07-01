@@ -2496,3 +2496,46 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q17163 proof artifacts to `origin/main`.
+
+## Implementation Slice 74 - Q19025 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\19025.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ19025.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q19025 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 72]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `14` Con Law details, `30` seed candidates, and `16` remaining; next seed is Q19025 with seed key `A`, outline `44040203`, selector `44040200`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `8827aec Add Con Law Q19025 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\19025.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ19025.md`.
+  - Source key: `B`; transformed/public detail key: `A` after answer shuffle.
+  - Raw source row listed outline code `44040503` Freedom of the Press, while transformed CQ and app seed classify Q19025 under `44040203` for procedural due process stigma-plus doctrine.
+  - App seed key already matched the transformed key `A`; no seed JSON edit is expected.
+  - Current-law spot check: Paul v. Davis rejects reputation alone as a due process liberty/property interest; Siegert confirms defamation alone is not a Fourteenth Amendment liberty deprivation; Constantineau is the contrast case where stigma came with a legal restriction; Constitution Annotated summarizes the reputation-plus-statutory-entitlement framing.
+- Verification in progress:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q19025 detail returned clean.
+  - `npx tsx` import/count check returned `15` Con Law details, `30` seed candidates, and `15` remaining seeds without detail pages; Q19025 has key `A`, selector `44040200`/`child_code`, outline `44040203`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key and selector also match.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q19025 detail route; route HTML contains `Stigma Needs A Plus`, the credited answer text, and `GK-CONLAW-STIGMA-PLUS-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/19025`.
+  - Playwright CLI wrote desktop and mobile full-page screenshots; hung CLI cleanup processes were stopped after files were written.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q19025-desktop.png` (`1440x4413`, `513341` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q19025-mobile.png` (`390x8452`, `479723` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q19025 proof artifacts to `origin/main`.
