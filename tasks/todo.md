@@ -3149,3 +3149,39 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q21147 proof artifacts to `origin/main`.
+
+## First Group Final Closeout - Con Law 30/30
+
+- [x] Re-run aggregate detail/seed contract check.
+- [x] Re-run final lint and build at the completed 30/30 state.
+- [x] Sweep all 30 detail routes and sitemap coverage.
+- [x] Reconcile older selector metadata exposed by the aggregate check.
+- [x] Commit final closeout proof to private PDJ repo.
+
+Review:
+
+- First group implementation status:
+  - `30` Con Law seed candidates in `C:\barmatrix-app\lib\jesuslovesyou\conlaw-seed-candidates.json`.
+  - `30` public detail payloads in `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+  - `0` remaining seed candidates without detail pages.
+- Aggregate data proof:
+  - Final `npx tsx` contract check returned `details: 30`, `seeds: 30`, `remaining: []`, `duplicateDetails: []`, and `mismatches: []`.
+  - The stricter aggregate check initially exposed older selector metadata drift for Q17114, Q19280, and Q14225. Those detail entries now match the seed selector `44040200` / `child_code` while preserving their specific outline/source-outline codes.
+  - Local app cleanup commit: `f4b635f` (`Reconcile Con Law seed selector metadata`).
+- Final verification:
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - All-route sweep checked `30` detail URLs under `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/{questionId}` and returned `failures: []`; each page included its title, credited-answer marker, and sitemap entry.
+- Local app commits from this closeout segment:
+  - `c90e352` (`Add Con Law Q17574 case study`).
+  - `b85b0fd` (`Add Con Law Q18911 case study`).
+  - `468526d` (`Add Con Law Q21147 case study`).
+  - `f4b635f` (`Reconcile Con Law seed selector metadata`).
+- Repository boundary:
+  - `C:\barmatrix-app` is clean at `## codex-review...origin/codex-review [ahead 89]`; app commits remain local-only and were not pushed or deployed.
+  - `C:\PDJ` was clean on `main...origin/main` before this final closeout note.
+  - `C:\barmatrix-api` remained read-only; unrelated dirty task files were not touched.
+- Final private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed final 30/30 closeout proof to `origin/main`.
