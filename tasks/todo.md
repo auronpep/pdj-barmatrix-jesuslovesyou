@@ -3376,3 +3376,60 @@ Review:
 - Local app commit:
   - `ea34952` (`Add Jesuslovesyou artifact hub`).
 - Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
+
+## Implementation Slice 95 - First-Group Named Deliverable Files
+
+- [x] Add a repeatable generator for the named first-group deliverables.
+- [x] Export Evidence-Pilot-01 named deliverables.
+- [x] Export ConLaw-Pilot-01 named deliverables.
+- [x] Generate real `.xlsx` question inventory workbooks from the verified CSV inventories.
+- [x] Verify generated counts, workbook row counts, and required probe content.
+
+Review:
+
+- Generator files:
+  - `C:\PDJ\scripts\Build-FirstGroupDeliverables.ps1`
+  - `C:\PDJ\scripts\Export-FirstGroupSnapshot.ts`
+- Source of truth:
+  - The generator imports the same `C:\barmatrix-app\lib\jesuslovesyou` arrays used by the verified `/Jesuslovesyou/` routes.
+  - The inventory workbooks are converted from the existing verified CSV inventories in `C:\PDJ\output\evidence-pilot-01` and `C:\PDJ\output\conlaw-pilot-01`.
+- Command passed:
+  - `pwsh -NoProfile -File C:\PDJ\scripts\Build-FirstGroupDeliverables.ps1 -Verify`
+- Generated Evidence deliverables:
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_question_inventory.xlsx`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_golden_set.md`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_keys.md`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_outline_nodes.md`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_leadme_cards.yaml`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_answer_flow_examples.html`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_qa_report.md`
+- Generated Con Law deliverables:
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_question_inventory.xlsx`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_golden_set.md`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_keys.md`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_outline_nodes.md`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_leadme_cards.yaml`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_answer_flow_examples.html`
+  - `C:\PDJ\output\conlaw-pilot-01\conlaw_pilot_01_qa_report.md`
+- Verification passed:
+  - Generator snapshot detail counts: Evidence `50`, Con Law `30`.
+  - Workbook verification with bundled Python/openpyxl:
+    - Evidence workbook: `272` data rows, `11` columns.
+    - Con Law workbook: `489` data rows, `14` columns.
+  - Generated artifact counts:
+    - Evidence golden-set rows: `50`.
+    - Con Law golden-set rows: `30`.
+    - Evidence key rows: `151`.
+    - Con Law key rows: `92`.
+    - Evidence LeadMe cards: `50`.
+    - Con Law LeadMe cards: `30`.
+    - Evidence answer-flow examples: `15`.
+    - Con Law answer-flow examples: `10`.
+  - Probe content verified:
+    - Evidence golden set contains `22198`.
+    - Con Law golden set contains `14293`.
+    - Evidence QA report contains `| Recode rows | 8 |`.
+    - Con Law QA report contains `| Recode rows | 0 |`.
+  - `git -C C:\PDJ diff --check` passed for the new scripts and generated text deliverables.
+  - PDJ CodeGraph status after sync: `14` files, `6` nodes, `10` edges, up to date.
+- Remaining hard gate: these are preparation/package artifacts only. No app push, Vercel deploy, production provider mutation, or homepage pointer change was performed.
