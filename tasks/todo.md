@@ -3275,3 +3275,32 @@ Review:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-keys-leadme-mobile.png`
 - Final app CodeGraph sync after these page edits: `330` files, `4090` nodes, `7923` edges, up to date.
 - Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
+
+## Implementation Slice 92 - Outline Node Linked Assets
+
+- [x] Add linked case-study inventory to Evidence outline-code pages.
+- [x] Add linked case-study inventory to Con Law outline-code pages.
+- [x] Surface reusable key counts, Trap Key counts, LeadMe counts, drill counts, key samples, and proof drills.
+- [x] Verify all outline-code pages over HTTP.
+- [x] Verify lint, build, screenshots, and CodeGraph sync.
+- [ ] Push or deploy app changes only after explicit release authorization.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\[code]\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\[code]\page.tsx`
+- Evidence outline pages now link details by selected outline code or source outline code so recode items stay visible on the reviewer-facing source node. Example: Evidence `33040301` shows five linked case studies, including Q14757 with selected `33040103` and source `33040301`.
+- Con Law outline pages link details by selector code, preserving the parent/child selector model from the seed set.
+- Aggregate count smoke:
+  - Evidence selected/source-linked pages: all `10` outline pages have `5` linked case studies; key counts range from `15` to `16`, LeadMe steps from `33` to `40`, drill seeds `15` each.
+  - Con Law selector pages: all `6` outline pages have `5` linked case studies; key counts range from `15` to `16`, LeadMe steps from `34` to `41`, drill seeds `15` each.
+- `git -C C:\barmatrix-app diff --check -- app/Jesuslovesyou/evidence-pilot-01/[code]/page.tsx app/Jesuslovesyou/conlaw-pilot-01/[code]/page.tsx` passed with only LF-to-CRLF warnings.
+- `npm run lint` passed in `C:\barmatrix-app`.
+- `npm run build` passed in `C:\barmatrix-app`.
+- HTTP sweep checked all `16` outline-code pages under `/Jesuslovesyou/evidence-pilot-01/{code}` and `/Jesuslovesyou/conlaw-pilot-01/{code}`; result was `failures: []`, and every page contained `Linked Questions + Keys`, `Key Samples + Proof Drills`, `Case studies`, and `Open case study`.
+- Screenshot proof:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-outline-node-33040301-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-outline-node-44040502-mobile.png`
+- Final app CodeGraph sync after these page edits: `330` files, `4092` nodes, `7941` edges, up to date.
+- Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
