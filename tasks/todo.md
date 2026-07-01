@@ -3304,3 +3304,35 @@ Review:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-outline-node-44040502-mobile.png`
 - Final app CodeGraph sync after these page edits: `330` files, `4092` nodes, `7941` edges, up to date.
 - Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
+
+## Implementation Slice 93 - Pilot QA Report Routes
+
+- [x] Add Evidence QA report route under `/Jesuslovesyou/evidence-pilot-01/qa-report`.
+- [x] Add Con Law QA report route under `/Jesuslovesyou/conlaw-pilot-01/qa-report`.
+- [x] Link both QA reports from the pilot landing pages.
+- [x] Add both QA report routes to `sitemap.ts`.
+- [x] Verify lint, build, HTTP text, sitemap inclusion, screenshots, and CodeGraph sync.
+- [ ] Push or deploy app changes only after explicit release authorization.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\qa-report\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\qa-report\page.tsx`
+  - `C:\barmatrix-app\lib\jesuslovesyou\qa-summary.ts`
+  - `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\page.tsx`
+  - `C:\barmatrix-app\app\sitemap.ts`
+- QA count smoke from app data:
+  - Evidence: `50/50` seed details, `151` reusable keys, `47` Trap Keys, `370` LeadMe steps, `150` drill seeds, `376` answer-flow steps, `8` recode rows.
+  - Con Law: `30/30` seed details, `92` reusable keys, `0` Trap Keys currently present in the Con Law payload, `228` LeadMe steps, `90` drill seeds, `236` answer-flow steps, `0` direct source-code mismatch rows.
+- `git -C C:\barmatrix-app diff --check -- app/Jesuslovesyou/evidence-pilot-01/qa-report/page.tsx app/Jesuslovesyou/conlaw-pilot-01/qa-report/page.tsx app/Jesuslovesyou/evidence-pilot-01/page.tsx app/Jesuslovesyou/conlaw-pilot-01/page.tsx app/sitemap.ts lib/jesuslovesyou/qa-summary.ts` passed with only LF-to-CRLF warnings.
+- `npm run lint` passed in `C:\barmatrix-app`.
+- `npm run build` passed in `C:\barmatrix-app`; generated route count increased to `205` static pages and includes both QA report routes.
+- HTTP checks on reused local server `http://127.0.0.1:3001` confirmed both QA report routes returned `200` and contained `QA Counts`, coverage/selector sections, `QA Buckets`, `Seed details`, and `Open case study`.
+- `http://127.0.0.1:3001/sitemap.xml` contains both `/Jesuslovesyou/evidence-pilot-01/qa-report` and `/Jesuslovesyou/conlaw-pilot-01/qa-report`.
+- Screenshot proof:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-qa-report-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-qa-report-mobile.png`
+- Final app CodeGraph sync after these page edits: `333` files, `4136` nodes, `8030` edges, up to date.
+- Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
