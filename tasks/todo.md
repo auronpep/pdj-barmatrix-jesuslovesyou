@@ -39,6 +39,36 @@ Target route prefix: `/Jesuslovesyou/`
 - No live deploy or production provider mutation during prep.
 - Existing BarMatrix app/API folders are read-only references until implementation starts.
 
+## Implementation Slice 1 - Jesuslovesyou Pilot Shell
+
+- [x] Add app-local pilot data for Evidence-Pilot-01 and ConLaw-Pilot-01.
+- [x] Add public `/Jesuslovesyou/` route using the first-group pilot plan.
+- [x] Add `/Jesuslovesyou/checkout` and `/Jesuslovesyou/checkout/success` wrappers without changing root checkout behavior.
+- [x] Add sitemap entry for `/Jesuslovesyou`.
+- [x] Run focused verification and record results.
+
+## Implementation Evidence - 2026-07-01
+
+- App repo touched: `C:\barmatrix-app` on branch `codex-review`; changes are local only and not pushed.
+- Added data module: `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`.
+- Added route: `C:\barmatrix-app\app\Jesuslovesyou\page.tsx`.
+- Added checkout wrapper: `C:\barmatrix-app\app\Jesuslovesyou\checkout\page.tsx`.
+- Added checkout success wrapper: `C:\barmatrix-app\app\Jesuslovesyou\checkout\success\page.tsx`.
+- Updated existing checkout client only to accept optional route prefix; default `/checkout` behavior remains unchanged.
+- Updated existing checkout success hero only to accept optional back-to-checkout href; default remains `/checkout`.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou`, `/Jesuslovesyou/checkout`, and `/Jesuslovesyou/checkout/success`.
+- Local preview running: `http://127.0.0.1:3001/Jesuslovesyou` from PID 42964.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou`
+  - `http://127.0.0.1:3001/Jesuslovesyou/checkout`
+  - `http://127.0.0.1:3001/Jesuslovesyou/checkout/success`
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-mobile.png`
+
 ## Review
 
 Preparation complete. Private GitHub registration and initial push complete.
+Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed checkout wrappers are locally verified.
