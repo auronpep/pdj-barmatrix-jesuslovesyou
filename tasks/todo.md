@@ -2193,7 +2193,7 @@ Review:
 - [x] Reconcile source key, transformed key, seed key, and outline code.
 - [x] Add public-safe Q14237 Con Law detail payload to the app.
 - [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
-- [ ] Commit scoped app change locally and push PDJ proof privately.
+- [x] Commit scoped app change locally and push PDJ proof privately.
 
 Review:
 
@@ -2227,3 +2227,6 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14237-desktop.png` (`1440x4493`, `568746` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14237-mobile.png` (`390x9105`, `540960` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q14237 proof artifacts to `origin/main`.
