@@ -1543,3 +1543,33 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14781-desktop.png` (`492718` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14781-mobile.png` (`459487` bytes)
+
+## Implementation Slice 48 - Q14769 Dual Hearsay Exception Recording Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14769.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14769.md`.
+- [x] Add public-safe Q14769 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14769.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `c4299a1 Add Evidence Q14769 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14769.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14769.md`.
+- Q14769 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14769`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14769`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14769`
+  - Playwright DOM checks found 6 required Q14769 strings on desktop and mobile.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+  - App data count found `41` authored case studies, `50` seed candidates, and `9` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14769-desktop.png` (`474540` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14769-mobile.png` (`446818` bytes)
