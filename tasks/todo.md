@@ -123,3 +123,28 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
   - `http://127.0.0.1:3001/sitemap.xml`
 - Playwright screenshot:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-code-33040203-desktop.png`
+
+## Implementation Slice 4 - Evidence Exact-Code Inventory
+
+- [x] Add repeatable inventory scanner: `C:\PDJ\scripts\Build-EvidencePilotInventory.ps1`.
+- [x] Read local source folders read-only:
+  - `C:\FOC\Workspace\QBank`
+  - `C:\FOC\Workspace\Finished`
+  - `C:\CCG\Finished`
+- [x] Pull exact-code rows for all 10 Evidence pilot outline codes.
+- [x] Emit JSON, CSV, and Markdown summary artifacts.
+- [x] Include `pilot_question_status` and `has_finished_transform` fields.
+- [x] Verify every selected Evidence code has at least one local row.
+
+## Implementation Evidence - Evidence Exact-Code Inventory - 2026-07-01
+
+- Script: `C:\PDJ\scripts\Build-EvidencePilotInventory.ps1`.
+- Command passed: `pwsh -NoProfile -File C:\PDJ\scripts\Build-EvidencePilotInventory.ps1 -Verify`.
+- Total rows: 272.
+- Status counts:
+  - `in_scope_exact_code`: 212
+  - `transformed_exact_code`: 60
+- Artifacts:
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory.json`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory.csv`
+  - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_inventory_summary.md`
