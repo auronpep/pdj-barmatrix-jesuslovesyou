@@ -301,3 +301,45 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seed-14824-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seed-14824-mobile.png`
+
+## Implementation Slice 9 - Q14823 Witness-Attack Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14823.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14823.md`.
+- [x] Add public-safe Q14823 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14823.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - Q14823 Witness-Attack Case Study - 2026-07-01
+
+- App data updated: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local commit: `db0e552 Add Evidence Q14823 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14823.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14823.md`.
+- Q14823 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14823`.
+- Public-safe data check passed: no `C:\`, `QBank`, `\Finished\`, `qbank_path`, `transform_path`, or `selected_path` strings in the app seed/detail route files.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]` with 50 generated paths.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14823`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Sitemap verification:
+  - seed detail route count: 50
+  - contains `/Jesuslovesyou/evidence-pilot-01/seeds/14823`
+- Rendered DOM verification passed:
+  - `Witness Truthfulness: Bias vs. Specific Acts` present
+  - `14823_COASTAL_BAKERY` present
+  - recommended/source code `31010406` present
+  - `B / correct` present
+  - `GK-EVIDENCE-WITNESS-SPECIFIC-ACT-01` present
+  - `GK-EVIDENCE-BIAS-MOTIVE-EXTRINSIC-01` present
+  - `LeadMe steps` present
+  - `Specific Act Bar` drill present
+- Seed page link counts:
+  - authored case-study links: 2
+  - review-row links: 48
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14823-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14823-mobile.png`
