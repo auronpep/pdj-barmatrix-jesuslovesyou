@@ -3223,3 +3223,29 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed this audit/proof update to `origin/main`.
+
+## Implementation Slice 90 - Jesuslovesyou Front Door Status
+
+- [x] Refresh CodeGraph after the newly added `Jesuslovesyou` app files.
+- [x] Update the `/Jesuslovesyou` front door to show first-group implementation counts from source arrays.
+- [x] Update Con Law pilot copy from candidate queue to implemented seed routes.
+- [x] Verify lint, build, HTTP text, and desktop/mobile screenshots.
+- [ ] Push or deploy app changes only after explicit release authorization.
+
+Review:
+
+- App CodeGraph was stale for the new route files before this continuation; `codegraph sync C:\barmatrix-app` synced `51` changed files and later `3` changed files after the status copy edit.
+- Final CodeGraph status for `C:\barmatrix-app`: `330` files, `4080` nodes, `7895` edges, up to date.
+- Changed app files:
+  - `C:\barmatrix-app\app\Jesuslovesyou\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\page.tsx`
+  - `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`
+- Count smoke from app arrays returned Evidence `50/50`, Con Law `30/30`, total `80`.
+- `git -C C:\barmatrix-app diff --check -- app/Jesuslovesyou/page.tsx app/Jesuslovesyou/conlaw-pilot-01/page.tsx lib/jesuslovesyou/pilot-data.ts` passed with only LF-to-CRLF warnings.
+- `npm run lint` passed in `C:\barmatrix-app`.
+- `npm run build` passed in `C:\barmatrix-app`; build route table includes `/Jesuslovesyou`, prefixed checkout routes, `30` Con Law seed pages, and `50` Evidence seed pages.
+- Reused existing local server on `http://127.0.0.1:3001`; `/Jesuslovesyou` returned HTTP `200` and contained `80`, `DETAIL PAGES`, `seed detail pages`, `Keys + LeadMe`, and `Seed/detail routes complete locally`.
+- Screenshot proof:
+  - `C:\PDJ\output\playwright\jesuslovesyou-frontdoor-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-frontdoor-mobile.png`
+- Remaining hard gate: app push, Vercel deploy, and homepage pointer change are still intentionally not performed without explicit release authorization.
