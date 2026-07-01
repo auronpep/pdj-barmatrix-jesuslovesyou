@@ -511,3 +511,45 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14778-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14778-mobile.png`
+
+## Implementation Slice 14 - Q14808 Non-Hearsay Effect Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14808.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14808.md`.
+- [x] Add public-safe Q14808 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14808.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - Q14808 Non-Hearsay Effect Case Study - 2026-07-01
+
+- App data updated: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local commit: `fc674b0 Add Evidence Q14808 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14808.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14808.md`.
+- Q14808 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14808`.
+- Public-safe data check passed: no `C:\`, `QBank`, `\Finished\`, `qbank_path`, `transform_path`, or `selected_path` strings in the app seed/detail route files.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]` with 50 generated paths.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14808`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Sitemap verification:
+  - seed detail route count: 50
+  - contains `/Jesuslovesyou/evidence-pilot-01/seeds/14808`
+- Rendered DOM verification passed:
+  - `Non-Hearsay Purpose: Effect on the Listener` present
+  - `14808_CHRISTIAN-RADIO-DISPATCH` present
+  - recommended/source code `33040203` present
+  - `C / correct` present
+  - `GK-EVIDENCE-EFFECT-ON-LISTENER-01` present
+  - `SK-EVIDENCE-CALL-LOCK-01` present
+  - `LeadMe steps` present
+  - `Effect Classification` drill present
+- Seed page link counts:
+  - authored case-study links: 7
+  - review-row links: 43
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14808-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14808-mobile.png`
