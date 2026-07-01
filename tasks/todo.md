@@ -2741,3 +2741,45 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q17680 proof artifacts to `origin/main`.
+
+## Implementation Slice 80 - Q14236 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14236.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14236.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q14236 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 78]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `20` Con Law details, `30` seed candidates, and `10` remaining; next seed is Q14236 with seed key `C`, outline `44040501`, selector `44040501`/`exact`, and coverage group `free_exercise`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14236.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14236.md`.
+  - Source key: `D`; transformed/public detail key: `C` after answer shuffle.
+  - Source row, transformed CQ, and app seed all use outline code `44040501` for Freedom of religion.
+  - App seed key already matches the transformed key `C`; no seed JSON edit is expected.
+  - First Amendment lane guardrail: the source and transform ask only for a First Amendment Free Exercise claim; RFRA is not included in the public answer path.
+  - Current-law spot check: Employment Division v. Smith controls neutral, generally applicable burdens on religious exercise; Lukumi confirms laws targeting religion trigger strict scrutiny; Constitution Annotated summarizes the Smith rule for incidental burdens.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q14236 detail returned clean and confirmed no RFRA detour or original ski-facility wording leaked into the public payload.
+  - `npx tsx` import/count check returned `21` Con Law details, `30` seed candidates, and `9` remaining seeds without detail pages; Q14236 has key `C`, selector `44040501`/`exact`, outline `44040501`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, and source-outline values match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14236`; route HTML contains `Free Exercise Needs Targeting`, the credited answer text, `Timothy`, and `GK-CONLAW-FREEEX-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14236`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q14236 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14236-desktop.png` (`1440x2712`, `247271` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14236-mobile.png` (`390x5579`, `242188` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `4507600` (`Add Con Law Q14236 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q14236 proof artifacts to `origin/main`.
