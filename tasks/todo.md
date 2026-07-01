@@ -664,3 +664,31 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14844-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14844-mobile.png`
+
+## Implementation Slice 18 - Q14807 Non-Hearsay Notice Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14807.md`.
+- [x] Check transformed CQ file: `C:\FOC\Workspace\Finished\CQ14807.md` is not present.
+- [x] Add public-safe Q14807 detail payload to the app from the source rule.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14807.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `f569d63 Add Evidence Q14807 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14807.md`.
+- Transform status: `C:\FOC\Workspace\Finished\CQ14807.md` was absent, so the public case study was authored directly from the source rule.
+- Q14807 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14807`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14807`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14807`
+  - Playwright DOM checks found 8 required Q14807 strings, `11` authored case-study links, and `39` review rows.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14807-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14807-mobile.png`
