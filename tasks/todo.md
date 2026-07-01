@@ -2453,3 +2453,46 @@ Review:
 - Private proof push:
   - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
   - Pushed Q14225 proof artifacts to `origin/main`.
+
+## Implementation Slice 73 - Q17163 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17163.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ17163.md`.
+- [x] Reconcile source key, transformed key, seed key, selector, and outline code.
+- [x] Add public-safe Q17163 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 71]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - CodeGraph app index healthy: 312 files indexed, 3,774 nodes, 7,556 edges.
+  - Seed import/count check returned `13` Con Law details, `30` seed candidates, and `17` remaining; next seed is Q17163 with seed key `C`, outline `44040203`, selector `44040200`/`child_code`, and coverage group `due_process_equal_protection_routing`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `da723aa Add Con Law Q17163 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\17163.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ17163.md`.
+  - Source key: `B`; transformed/public detail key: `C` after answer shuffle.
+  - Raw source row listed outline code `44040201`, while transformed CQ and app seed classify Q17163 under `44040203` for due process negligent-loss doctrine.
+  - App seed key already matched the transformed key `C`; no seed JSON edit is expected.
+  - Current-law spot check: Daniels holds that negligent official conduct causing unintended loss or injury does not implicate Due Process; Parratt/Hudson support the postdeprivation-remedy background; County of Sacramento confirms substantive due process targets abusive executive action, not mere carelessness.
+- Verification in progress:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q17163 detail returned clean.
+  - `npx tsx` import/count check returned `14` Con Law details, `30` seed candidates, and `16` remaining seeds without detail pages; Q17163 has key `C`, selector `44040200`/`child_code`, outline `44040203`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key and selector also match.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q17163 detail route; route HTML contains `Negligence Is Not Due Process`, the credited answer text, and `GK-CONSTITUTIONAL-LAW-PERMIT-FEE-LEDGER-01`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/17163`.
+  - Playwright CLI captured desktop and mobile full-page screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17163-desktop.png` (`1440x4381`, `504534` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q17163-mobile.png` (`390x8445`, `486224` bytes)
+- Private proof push:
+  - Verified `origin` as `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git` and GitHub visibility as `PRIVATE` before pushing.
+  - Pushed Q17163 proof artifacts to `origin/main`.
