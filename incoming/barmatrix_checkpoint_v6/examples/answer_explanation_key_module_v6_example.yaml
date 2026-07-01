@@ -1,0 +1,19 @@
+answer_explanation_key_module:
+  question_id: 14085_lydia-olive-jars
+  displayed_items:
+  - key_id: GK-CIVPRO-ADDITUR-7A-01
+    display_label: Gold Key
+    reason_shown:
+    - selected_decoy
+    - same_repair_cell
+    student_statement: Federal court means no additur. If the award is too low, the
+      federal plaintiff can seek a new trial only.
+    try_next: Review the Annotated Solve Board, then do one additur/remittitur direction
+      drill.
+  - key_id: TK-CIVPRO-STATE-ADDITUR-LURE
+    display_label: Trap Key
+    reason_shown:
+    - selected_decoy
+    student_statement: State law allowing additur is bait when a controlling federal
+      constitutional rule bars additur.
+    try_next: Run the Erie threshold LeadMe card.

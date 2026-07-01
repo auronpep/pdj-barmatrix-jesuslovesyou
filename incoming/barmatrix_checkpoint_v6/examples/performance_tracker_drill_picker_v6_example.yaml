@@ -1,0 +1,33 @@
+weakness_profile:
+  user_id: user_demo
+  subject: EVIDENCE
+  spine_code: 3.01.01.01.00.00
+  red_axis_id: RZ-01
+  canonical_axis_template_id: RZ01-PRELIMINARY-ADMISSIBILITY-DECISIONMAKER
+  purple_detail_id: PZD-04
+  blue_zone_id: BZ-10
+  mold_code: wrong_context_rule
+  orange_zone_id: OZ-04
+  trap_dimension_id: TD01
+  attempt_count: 4
+  miss_count: 2
+  recent_miss_count: 2
+  high_confidence_miss_count: 1
+  status: rising
+  next_best_task_id: task_roles_judge_jury_001
+drill_picker_recommendation:
+  recommendation_id: rec_001
+  user_id: user_demo
+  task_type: outline_microdrill
+  title: Roles of Judge and Jury
+  reason: 'Rising Active Zone: Decisionmaker Inversion. A 5-question exact-code drill
+    closes the smallest known gap.'
+  target:
+    spine_code: 3.01.01.01.00.00
+    red_axis_id: RZ-01
+    key_id: GK-EVIDENCE-FRE104A-JUDGE
+  estimated_minutes: 14
+  priority_rank: 1
+  confidence: high
+  display_in_dashboard_next_four: true
+  available_in_leadme: true

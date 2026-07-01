@@ -1,0 +1,16 @@
+.codex/local/
+.codegraph/
+.env
+.env.*
+.vercel/
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.log
+*.tmp
+__pycache__/
+.pytest_cache/
+.DS_Store
+Thumbs.db

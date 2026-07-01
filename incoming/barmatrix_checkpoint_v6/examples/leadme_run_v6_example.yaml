@@ -1,0 +1,30 @@
+leadme_module:
+  module_id: leadme_evidence_104a_001
+  title: Roles of Judge and Jury LeadMe
+  user_id: user_demo
+  mode: daily_plan
+  target_reason: Repair Decisionmaker Inversion in Evidence preliminary admissibility.
+  tasks:
+  - task_id: ldv_001
+    task_type: devotional_prompt
+    title: Offer It First
+    estimated_seconds: 30
+  - task_id: lm_001
+    task_type: key_card
+    title: Judge decides FRE 104(a)
+    estimated_seconds: 60
+  - task_id: lm_002
+    task_type: trap_key_card
+    title: 'Trap Key: jury decides because facts are disputed'
+    estimated_seconds: 60
+  - task_id: lm_003
+    task_type: assigned_drill_item
+    title: Roles of Judge and Jury Q1
+    estimated_seconds: 150
+  - task_id: lm_004
+    task_type: reflection_line
+    title: State the gate
+    estimated_seconds: 30
+  completion_behavior:
+    proof_drill_required: false
+    daily_plan_done_action: offer_continue_smart

@@ -1,0 +1,424 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://barmatrix.local/schemas/barmatrix_c3_product_schema_v6.json
+title: BarMatrix C3 Product Schema v6
+type: object
+additionalProperties: true
+definitions:
+  command_deck_state:
+    type: object
+    required:
+    - user_id
+    - primary_next_action
+    - repair_queue
+    - where_to_dig_next
+    properties:
+      user_id:
+        type: string
+      primary_next_action:
+        $ref: '#/definitions/daily_task'
+      repair_queue:
+        type: array
+        items:
+          $ref: '#/definitions/repair_queue_item'
+      where_to_dig_next:
+        type: object
+        properties:
+          selection_status:
+            enum:
+            - algorithm_pending
+            - selected
+          selected_lenses:
+            type: array
+            items:
+              type: string
+  daily_task:
+    type: object
+    required:
+    - task_id
+    - user_id
+    - task_source
+    - task_type
+    - title
+    - priority_rank
+    - estimated_minutes
+    properties:
+      task_id:
+        type: string
+      user_id:
+        type: string
+      task_source:
+        type: string
+      task_type:
+        type: string
+      title:
+        type: string
+      reason:
+        type: string
+      priority_rank:
+        type: integer
+      required_today:
+        type: boolean
+      estimated_minutes:
+        type: number
+      display_in_dashboard_next_four:
+        type: boolean
+      available_in_leadme:
+        type: boolean
+  repair_queue_item:
+    type: object
+    required:
+    - item_id
+    - item_type
+    - title
+    - reason
+    properties:
+      item_id:
+        type: string
+      item_type:
+        type: string
+      title:
+        type: string
+      reason:
+        type: string
+      start_route:
+        type:
+        - string
+        - 'null'
+  weakness_profile:
+    type: object
+    required:
+    - user_id
+    - status
+    properties:
+      user_id:
+        type: string
+      subject:
+        type:
+        - string
+        - 'null'
+      spine_code:
+        type:
+        - string
+        - 'null'
+      red_axis_id:
+        type:
+        - string
+        - 'null'
+      canonical_axis_template_id:
+        type:
+        - string
+        - 'null'
+      purple_detail_id:
+        type:
+        - string
+        - 'null'
+      blue_zone_id:
+        type:
+        - string
+        - 'null'
+      mold_code:
+        type:
+        - string
+        - 'null'
+      orange_zone_id:
+        type:
+        - string
+        - 'null'
+      trap_dimension_id:
+        type:
+        - string
+        - 'null'
+      key_gap_ids:
+        type: array
+        items:
+          type: string
+      trap_key_gap_ids:
+        type: array
+        items:
+          type: string
+      attempt_count:
+        type: integer
+      miss_count:
+        type: integer
+      recent_miss_count:
+        type: integer
+      high_confidence_miss_count:
+        type: integer
+      status:
+        type: string
+      next_best_task_id:
+        type:
+        - string
+        - 'null'
+  active_zone:
+    type: object
+    required:
+    - active_zone_id
+    - user_id
+    - title
+    - status
+    - zone_basis
+    properties:
+      active_zone_id:
+        type: string
+      user_id:
+        type: string
+      ui_label:
+        const: Red Zone
+      title:
+        type: string
+      zone_basis:
+        type: array
+        items:
+          type: string
+      status:
+        type: string
+      damage_score:
+        type: number
+      next_task_id:
+        type:
+        - string
+        - 'null'
+  leadme_module:
+    type: object
+    required:
+    - module_id
+    - title
+    - user_id
+    - mode
+    - tasks
+    properties:
+      module_id:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: string
+      mode:
+        type: string
+      linked_weakness_profile_ids:
+        type: array
+        items:
+          type: string
+      linked_key_ids:
+        type: array
+        items:
+          type: string
+      tasks:
+        type: array
+        items:
+          $ref: '#/definitions/leadme_task'
+  leadme_task:
+    type: object
+    required:
+    - task_id
+    - task_type
+    - title
+    - estimated_seconds
+    properties:
+      task_id:
+        type: string
+      module_id:
+        type:
+        - string
+        - 'null'
+      sequence_number:
+        type:
+        - integer
+        - 'null'
+      task_type:
+        type: string
+      title:
+        type: string
+      estimated_seconds:
+        type: integer
+      instruction:
+        type: string
+      content:
+        type: object
+      required_response_type:
+        type: string
+      linked_key_ids:
+        type: array
+        items:
+          type: string
+      linked_question_ids:
+        type: array
+        items:
+          type: string
+      linked_drill_ids:
+        type: array
+        items:
+          type: string
+  leadme_devotional_card:
+    type: object
+    required:
+    - card_id
+    - title
+    - scripture
+    - virtue_tags
+    - study_application
+    - estimated_seconds
+    properties:
+      card_id:
+        type: string
+      title:
+        type: string
+      scripture:
+        type: string
+      translation:
+        type: string
+      virtue_tags:
+        type: array
+        items:
+          type: string
+      one_sentence_exhortation:
+        type: string
+      study_application:
+        type: string
+      estimated_seconds:
+        type: integer
+      placement:
+        type: array
+        items:
+          type: string
+      legal_content:
+        type: boolean
+  key_master:
+    type: object
+    required:
+    - key_id
+    - key_title
+    - key_kind
+    - render_roles
+    - student_statement
+    - when_you_see
+    - ask_this
+    - default_move
+    properties:
+      key_id:
+        type: string
+      key_title:
+        type: string
+      key_kind:
+        type: string
+      render_roles:
+        type: array
+        items:
+          type: string
+      primary_render_role:
+        type: string
+      student_statement:
+        type: string
+      when_you_see:
+        type: string
+      ask_this:
+        type: string
+      default_move:
+        type: string
+      why_it_works:
+        type: string
+      override_or_exception:
+        type: object
+      confidence:
+        type: string
+      lifecycle_status:
+        type: string
+  trap_key_profile:
+    type: object
+    required:
+    - key_id
+    - student_label
+    - distrust_by_default
+    - student_warning
+    properties:
+      key_id:
+        type: string
+      student_label:
+        const: Trap Key
+      decoy_phrase_patterns:
+        type: array
+        items:
+          type: string
+      distrust_by_default:
+        type: boolean
+      when_it_is_actually_right:
+        type: string
+      common_wrong_context:
+        type: string
+      trigger_exposure_rules:
+        type: object
+      student_warning:
+        type: string
+  final_sprint_sheet:
+    type: object
+    required:
+    - sheet_id
+    - snapshot_id
+    - day_number
+    - title
+    - theme
+    - priority_tiers
+    properties:
+      sheet_id:
+        type: string
+      snapshot_id:
+        type: string
+      day_number:
+        type: integer
+        minimum: 1
+        maximum: 14
+      title:
+        type: string
+      theme:
+        type: string
+      primary_goal:
+        type: string
+      overload_level:
+        type: string
+      priority_tiers:
+        type: object
+      mixed_targets:
+        type: object
+      completion_rule:
+        type: string
+  outline_access_node:
+    type: object
+    required:
+    - spine_code
+    - display_code
+    - node_title
+    - role
+    properties:
+      spine_code:
+        type: string
+      display_code:
+        type: string
+      legacy_outline_code:
+        type:
+        - string
+        - 'null'
+      subject:
+        type: string
+      node_title:
+        type: string
+      node_path:
+        type: string
+      role:
+        const: advanced_index
+      linked_assets:
+        type: object
+      actions:
+        type: object
+  answer_explanation_key_module:
+    type: object
+    required:
+    - question_id
+    - displayed_items
+    properties:
+      question_id:
+        type: string
+      displayed_items:
+        type: array
+        items:
+          type: object

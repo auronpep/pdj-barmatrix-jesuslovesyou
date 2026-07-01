@@ -1,0 +1,341 @@
+{
+  "version": "barmatrix_c3_product_v6",
+  "generated_at": "2026-07-01T00:45:54.697320Z",
+  "sets": {
+    "dashboard_action_type": [
+      "leadme_task",
+      "drill",
+      "key_review",
+      "trap_key",
+      "proof_drill",
+      "final_sprint_sheet",
+      "outline_microdrill",
+      "annotated_solve_board_review"
+    ],
+    "where_to_dig_lens": [
+      "active_zones",
+      "tension_matrix",
+      "pattern_board",
+      "misconceptions",
+      "outline_atlas",
+      "trap_keys",
+      "leadme",
+      "final_sprint",
+      "question_history"
+    ],
+    "repair_queue_item_type": [
+      "drill",
+      "question",
+      "key",
+      "trap_key",
+      "leadme_card",
+      "outline_micro_lesson",
+      "annotated_solve_board_review",
+      "proof_drill",
+      "final_sprint_sheet"
+    ],
+    "active_zone_status": [
+      "rising",
+      "active",
+      "cooling",
+      "burned",
+      "mastered"
+    ],
+    "zone_basis": [
+      "subject_spine",
+      "red_axis",
+      "canonical_axis",
+      "purple_detail",
+      "blue_signal",
+      "mold",
+      "orange_habit",
+      "key_gap",
+      "trap_key_gap",
+      "repair_cell"
+    ],
+    "leadme_mode": [
+      "daily_plan",
+      "continue_smart",
+      "final_sprint",
+      "outline_node",
+      "catchup"
+    ],
+    "leadme_task_type": [
+      "devotional_prompt",
+      "key_card",
+      "trap_key_card",
+      "mnemonic_card",
+      "example_card",
+      "red_axis_prompt",
+      "purple_ecology_prompt",
+      "blue_polarity_prompt",
+      "mold_filter_prompt",
+      "outline_micro_lesson",
+      "black_letter_micro_anchor",
+      "annotated_solve_board_review",
+      "single_question",
+      "assigned_drill_item",
+      "mini_drill",
+      "proof_drill",
+      "spaced_repetition_check",
+      "reflection_line",
+      "push_further_item"
+    ],
+    "leadme_response_type": [
+      "none",
+      "multiple_choice",
+      "short_text",
+      "confidence",
+      "self_check"
+    ],
+    "devotional_virtue_tag": [
+      "diligence",
+      "perseverance",
+      "humility",
+      "focus",
+      "courage",
+      "stewardship",
+      "peace",
+      "wisdom",
+      "endurance",
+      "obedience",
+      "faithfulness",
+      "gratitude"
+    ],
+    "devotional_placement": [
+      "module_start",
+      "after_miss",
+      "after_streak",
+      "session_end",
+      "between_tasks"
+    ],
+    "task_source": [
+      "command_deck",
+      "leadme",
+      "final_sprint",
+      "outline_access",
+      "spaced_repetition",
+      "coach",
+      "system"
+    ],
+    "task_type": [
+      "leadme_card",
+      "key_card",
+      "trap_key_card",
+      "mnemonic_card",
+      "example_card",
+      "red_axis_prompt",
+      "purple_ecology_prompt",
+      "blue_polarity_prompt",
+      "mold_filter_prompt",
+      "outline_micro_lesson",
+      "outline_microdrill",
+      "single_question",
+      "mini_drill",
+      "proof_drill",
+      "timed_set",
+      "final_sprint_sheet",
+      "annotated_solve_board_review"
+    ],
+    "key_kind": [
+      "doctrine_navigation_key",
+      "architecture_navigation_key",
+      "decoy_key",
+      "answer_mix_key",
+      "trigger_fact_key",
+      "direction_key",
+      "source_law_key",
+      "exception_key",
+      "mnemonic_key",
+      "example_key"
+    ],
+    "key_render_role": [
+      "gold",
+      "silver",
+      "trap_key",
+      "mnemonic",
+      "example",
+      "leadme",
+      "final_sprint"
+    ],
+    "key_confidence": [
+      "hard_anchor",
+      "high_prior",
+      "usually",
+      "tiebreaker",
+      "review_only"
+    ],
+    "key_lifecycle_status": [
+      "draft",
+      "hand_authored",
+      "model_suggested",
+      "tested",
+      "promoted",
+      "final_sprint",
+      "retired"
+    ],
+    "override_status": [
+      "specified",
+      "no_known_override",
+      "human_review"
+    ],
+    "trap_key_trigger_reason": [
+      "selected_decoy",
+      "adjacent_subgroup_miss",
+      "same_repair_cell",
+      "connection_score",
+      "final_sprint",
+      "coach"
+    ],
+    "final_sprint_overload_level": [
+      "compact",
+      "standard",
+      "overloaded"
+    ],
+    "final_sprint_priority_tier": [
+      "must_do",
+      "should_do",
+      "extra"
+    ],
+    "final_sprint_delivery": [
+      "web_first",
+      "pdf_later"
+    ],
+    "outline_node_role": [
+      "advanced_index"
+    ],
+    "outline_asset_type": [
+      "question",
+      "drill",
+      "key",
+      "trap_key",
+      "mnemonic",
+      "example",
+      "leadme_card",
+      "annotated_solve_board",
+      "c3_lesson",
+      "black_letter_item",
+      "trap_summary"
+    ],
+    "mastery_status": [
+      "not_started",
+      "introduced",
+      "active",
+      "cooling",
+      "mastered",
+      "burned",
+      "due_review"
+    ],
+    "answer_explanation_module": [
+      "result_header",
+      "review_truth",
+      "annotated_solve_board",
+      "choice_decode",
+      "trap_key_module",
+      "gold_silver_key_module",
+      "facts_table",
+      "trap_construction",
+      "repair_pattern",
+      "full_case_study"
+    ],
+    "annotated_solve_board_type": [
+      "source_gate",
+      "forum_tier",
+      "purpose_grid",
+      "element_chain",
+      "remedy_direction",
+      "timing_axis",
+      "comparator_matrix",
+      "default_exception",
+      "posture_gate",
+      "residual"
+    ],
+    "red_axis_id": [
+      "RZ-01",
+      "RZ-02",
+      "RZ-03",
+      "RZ-04",
+      "RZ-05",
+      "RZ-06",
+      "RZ-07",
+      "RZ-08",
+      "RZ-09",
+      "RZ-10"
+    ],
+    "purple_family_id": [
+      "PZF-01",
+      "PZF-02",
+      "PZF-03",
+      "PZF-04",
+      "PZF-05",
+      "PZF-Z"
+    ],
+    "purple_detail_id": [
+      "PZD-01",
+      "PZD-02",
+      "PZD-03",
+      "PZD-04",
+      "PZD-05",
+      "PZD-06",
+      "PZD-07",
+      "PZD-08",
+      "PZD-09",
+      "PZD-10",
+      "PZD-11",
+      "PZD-12",
+      "PZD-13",
+      "PZD-14",
+      "PZD-15",
+      "PZD-Z"
+    ],
+    "blue_zone_id": [
+      "BZ-01",
+      "BZ-02",
+      "BZ-03",
+      "BZ-04",
+      "BZ-05",
+      "BZ-06",
+      "BZ-07",
+      "BZ-08",
+      "BZ-09",
+      "BZ-10",
+      "BZ-11",
+      "BZ-12",
+      "BZ-13"
+    ],
+    "orange_zone_id": [
+      "OZ-01",
+      "OZ-02",
+      "OZ-03",
+      "OZ-04",
+      "OZ-05",
+      "OZ-06"
+    ],
+    "mold_filter": [
+      "NOT_TRUE",
+      "NOT_RESPONSIVE"
+    ]
+  },
+  "labels": {
+    "red_axis_id": {
+      "RZ-01": "Permission Before Action",
+      "RZ-02": "Kind Before Consequence",
+      "RZ-03": "Frame Before Logic",
+      "RZ-04": "Order Before Outcome",
+      "RZ-05": "Use Before Meaning",
+      "RZ-06": "Boundary Before Reach",
+      "RZ-07": "Link Before Story",
+      "RZ-08": "Scale Before Switch",
+      "RZ-09": "Event Is Not Effect",
+      "RZ-10": "Residual Signal"
+    },
+    "orange_zone_id": {
+      "OZ-01": "Recognition Grip",
+      "OZ-02": "Salience Capture",
+      "OZ-03": "Completion Bias",
+      "OZ-04": "Question Drift",
+      "OZ-05": "Calibration Collapse",
+      "OZ-06": "Safety Bias"
+    }
+  }
+}

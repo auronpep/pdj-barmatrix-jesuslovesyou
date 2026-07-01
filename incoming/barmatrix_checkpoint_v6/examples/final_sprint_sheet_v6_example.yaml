@@ -1,0 +1,46 @@
+final_sprint_sheet:
+  sheet_id: fs_day09_demo
+  snapshot_id: fs_snapshot_demo
+  day_number: 9
+  title: Use, Source, and Official-Sounding Traps
+  theme: Do not let the answer move the question.
+  primary_goal: Repair cross-subject Lens/Displacement and Authority/Rule Voice misses.
+  overload_level: overloaded
+  priority_tiers:
+    must_do:
+      keys:
+      - GK-EVIDENCE-NONHEARSAY-PURPOSE
+      - GK-CIVPRO-ERIE-FEDERAL-RULE-ON-POINT
+      trap_keys:
+      - TK-CONLAW-TAXPAYER-STANDING
+      - TK-CIVPRO-RULE11-DISCOVERY
+      drills:
+      - drill_use_before_meaning_5q
+    should_do:
+      examples:
+      - state_action_private_actor_examples
+      - effect_on_listener_examples
+      mnemonics:
+      - offer_termination_mnemonic
+    extra:
+      proof_questions:
+      - q_101
+      - q_202
+      - q_303
+  mixed_targets:
+    subjects:
+    - EVIDENCE
+    - CIVIL_PROCEDURE
+    - CONSTITUTIONAL_LAW
+    red_axis_ids:
+    - RZ-03
+    - RZ-05
+    purple_detail_ids:
+    - PZD-01
+    - PZD-02
+    - PZD-11
+    blue_zone_ids:
+    - BZ-05
+    - BZ-06
+    - BZ-09
+  completion_rule: Complete all Must Do items and at least one proof question.

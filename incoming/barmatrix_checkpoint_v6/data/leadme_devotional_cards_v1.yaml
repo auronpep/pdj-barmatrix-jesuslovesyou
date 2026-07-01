@@ -1,0 +1,305 @@
+- card_id: LDV-001
+  title: Offer It First
+  scripture: Whatever you do, work heartily, as for the Lord and not for men.
+  reference: Colossians 3:23
+  translation: ESV
+  virtue_tags:
+  - diligence
+  one_sentence_exhortation: Do this next task as service, not panic.
+  study_application: Give the next card full attention.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-002
+  title: Steady Hands
+  scripture: Let steadfastness have its full effect, that you may be perfect and complete,
+    lacking in nothing.
+  reference: James 1:4
+  translation: ESV
+  virtue_tags:
+  - perseverance
+  one_sentence_exhortation: Do not flee the repeated weakness; let it finish its work.
+  study_application: Take the next repair step without skipping.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-003
+  title: Quiet the Noise
+  scripture: Commit your work to the Lord, and your plans will be established.
+  reference: Proverbs 16:3
+  translation: ESV
+  virtue_tags:
+  - focus
+  one_sentence_exhortation: The next task is small enough to obey.
+  study_application: Finish the current micro-task before thinking about the whole
+    exam.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-004
+  title: Humble Review
+  scripture: God opposes the proud but gives grace to the humble.
+  reference: James 4:6
+  translation: ESV
+  virtue_tags:
+  - humility
+  one_sentence_exhortation: A miss is information, not identity.
+  study_application: Read the correction without defending the old answer.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-005
+  title: Ask for Wisdom
+  scripture: If any of you lacks wisdom, let him ask God, who gives generously to
+    all without reproach.
+  reference: James 1:5
+  translation: ESV
+  virtue_tags:
+  - wisdom
+  one_sentence_exhortation: You are not meant to muscle through confusion alone.
+  study_application: Name the exact question the card is asking.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-006
+  title: Do Not Be Anxious
+  scripture: Do not be anxious about tomorrow, for tomorrow will be anxious for itself.
+  reference: Matthew 6:34
+  translation: ESV
+  virtue_tags:
+  - peace
+  one_sentence_exhortation: "Today\u2019s portion is enough."
+  study_application: "Complete today\u2019s assigned move, not tomorrow\u2019s fear."
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-007
+  title: Run With Endurance
+  scripture: Let us run with endurance the race that is set before us.
+  reference: Hebrews 12:1
+  translation: ESV
+  virtue_tags:
+  - endurance
+  one_sentence_exhortation: Mastery is built by faithful laps.
+  study_application: Finish this drill with patience.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-008
+  title: Faithful in Little
+  scripture: One who is faithful in a very little is also faithful in much.
+  reference: Luke 16:10
+  translation: ESV
+  virtue_tags:
+  - faithfulness
+  one_sentence_exhortation: Small cards are not small if they repair the right weakness.
+  study_application: Treat this one-minute task as real training.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-009
+  title: Renew the Mind
+  scripture: Be transformed by the renewal of your mind.
+  reference: Romans 12:2
+  translation: ESV
+  virtue_tags:
+  - wisdom
+  one_sentence_exhortation: Repeated traps are old patterns being retrained.
+  study_application: Say the repair sentence aloud.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-010
+  title: Courage to Continue
+  scripture: Be strong and courageous. Do not be frightened, and do not be dismayed.
+  reference: Joshua 1:9
+  translation: ESV
+  virtue_tags:
+  - courage
+  one_sentence_exhortation: A hard question is not a stop sign.
+  study_application: Proceed to the next item.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-011
+  title: Diligent Hands
+  scripture: The hand of the diligent will rule.
+  reference: Proverbs 12:24
+  translation: ESV
+  virtue_tags:
+  - diligence
+  one_sentence_exhortation: Diligence is one exact action at a time.
+  study_application: Complete the assigned task before opening another page.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-012
+  title: Peaceable Correction
+  scripture: Whoever loves discipline loves knowledge.
+  reference: Proverbs 12:1
+  translation: ESV
+  virtue_tags:
+  - humility
+  one_sentence_exhortation: Correction is one of the fastest paths to mastery.
+  study_application: Look for the one move you skipped.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-013
+  title: Guard Your Attention
+  scripture: Keep your heart with all vigilance, for from it flow the springs of life.
+  reference: Proverbs 4:23
+  translation: ESV
+  virtue_tags:
+  - focus
+  one_sentence_exhortation: Attention is stewardship.
+  study_application: Do not multitask during this card.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-014
+  title: Enough Light
+  scripture: Your word is a lamp to my feet and a light to my path.
+  reference: Psalm 119:105
+  translation: ESV
+  virtue_tags:
+  - obedience
+  one_sentence_exhortation: You usually only need the next step.
+  study_application: Take the next indicated step.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-015
+  title: Work With Hope
+  scripture: In due season we will reap, if we do not give up.
+  reference: Galatians 6:9
+  translation: ESV
+  virtue_tags:
+  - perseverance
+  one_sentence_exhortation: Some repairs take repetition before they feel easy.
+  study_application: Repeat the weak move once more.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-016
+  title: Ordered Steps
+  scripture: The steps of a man are established by the Lord, when he delights in his
+    way.
+  reference: Psalm 37:23
+  translation: ESV
+  virtue_tags:
+  - trust
+  one_sentence_exhortation: A guided path is a mercy, not a crutch.
+  study_application: Let LeadMe choose the next card.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-017
+  title: Single Eye
+  scripture: If then your eye is healthy, your whole body will be full of light.
+  reference: Matthew 6:22
+  translation: ESV
+  virtue_tags:
+  - focus
+  one_sentence_exhortation: Clarity grows when attention is undivided.
+  study_application: Find the exact call before looking at choices.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-018
+  title: Practice Mercy
+  scripture: The righteous falls seven times and rises again.
+  reference: Proverbs 24:16
+  translation: ESV
+  virtue_tags:
+  - endurance
+  one_sentence_exhortation: A miss is not a verdict. It is a place to rise.
+  study_application: Start the repair item.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-019
+  title: Good Stewardship
+  scripture: It is required of stewards that they be found faithful.
+  reference: 1 Corinthians 4:2
+  translation: ESV
+  virtue_tags:
+  - stewardship
+  one_sentence_exhortation: Time is a trust; use the next minute well.
+  study_application: Do the shortest useful task fully.
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active
+- card_id: LDV-020
+  title: Finish the Work
+  scripture: I have fought the good fight, I have finished the race, I have kept the
+    faith.
+  reference: 2 Timothy 4:7
+  translation: ESV
+  virtue_tags:
+  - faithfulness
+  one_sentence_exhortation: Finishing small assignments builds finishing strength.
+  study_application: "Complete today\u2019s required card."
+  estimated_seconds: 30
+  placement:
+  - module_start
+  - between_tasks
+  legal_content: false
+  status: active

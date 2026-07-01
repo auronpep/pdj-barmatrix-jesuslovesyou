@@ -1,0 +1,56 @@
+pilot_subset_id: EVIDENCE-PILOT-01
+subject: EVIDENCE
+pilot_name: Use / Purpose / Witness Attack / Hearsay Gate
+source_spec: C:\PDJ\incoming\After_Setup_firstgroup.md
+status: planned
+recommended_order: 1
+target_question_count:
+  golden_seed: 50
+  batch_after_seed_validation: all_available_exact_code_questions
+outline_codes:
+  - code: "33040203"
+    node: Hearsay > Hearsay Exemptions > Statements used for non-hearsay purposes
+    reason: Best Use Before Meaning calibration node.
+  - code: "31010406"
+    node: Presentation of Evidence > Witnesses > Truthfulness
+    reason: Supports witness attack classification.
+  - code: "31010503"
+    node: Presentation of Evidence > Impeachment > Bias
+    reason: Prevents FRE 608(b) overuse.
+  - code: "31010107"
+    node: Presentation of Evidence > General Provisions > Preliminary questions
+    reason: Tests FRE 104(a)/(b) decisionmaker inversion.
+  - code: "32020302"
+    node: Relevance > Exclusion of Relevant Evidence > Discretionary exclusion
+    reason: FRE 403 balancing and insurance/arson purpose traps.
+  - code: "32020404"
+    node: Relevance > Character Evidence > Specific acts for noncharacter purposes
+    reason: MIMIC purpose board and visual diagrams.
+  - code: "33040301"
+    node: Hearsay > Hearsay Exceptions > Requiring unavailability of declarant
+    reason: Dying declaration, former testimony, statement against interest.
+  - code: "33040302"
+    node: Hearsay > Hearsay Exceptions > Not requiring unavailability of declarant
+    reason: Recorded recollection, excited utterance, present sense impression, medical diagnosis, business records.
+  - code: "35030304"
+    node: Privileges and Public Policy Exclusions > Public Policy Exclusions > Liability insurance
+    reason: Separates true insurance-policy exclusions from relevance/purpose items.
+  - code: "31010407"
+    node: Presentation of Evidence > Witnesses > Refreshing recollection
+    reason: Pairs with recorded recollection contrast.
+seed_composition:
+  clean_teaching_items: 30%
+  medium_friction: 40%
+  hard_or_high_pick_rate_trap: 20%
+  recode_or_ambiguous: 10%
+minimum_seed_coverage:
+  witness_truthfulness_bias: 5
+  non_hearsay_purpose: 5
+  fre_403_insurance_policy_purpose: 5
+  hearsay_exception: 5
+  preliminary_question_judge_jury: 5
+qa_rules:
+  - Do not trust source outline codes blindly.
+  - Record source_outline_code, recommended_outline_code, recode_status, and recode_reason.
+  - Validate exact-code questions before child-code and semantic-recode pulls.
+  - Keep Confrontation Clause out unless the issue is clearly hearsay-bar code 33040400.

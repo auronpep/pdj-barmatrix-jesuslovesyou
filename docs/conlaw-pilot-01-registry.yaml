@@ -1,0 +1,42 @@
+pilot_subset_id: CONLAW-PILOT-01
+subject: CONSTITUTIONAL_LAW
+pilot_name: Actor / Source / Rights Gate
+source_spec: C:\PDJ\incoming\After_Setup_firstgroup.md
+status: planned_after_evidence_calibration
+recommended_order: 2
+target_question_count:
+  golden_seed: 30
+  batch_after_evidence_pipeline_stabilizes: all_available_exact_code_questions
+outline_codes:
+  - code: "44040100"
+    node: Individual Rights > State Action Requirement
+    reason: Pure threshold gate; no state action means no constitutional violation.
+  - code: "44040502"
+    node: Individual Rights > First Amendment Protections > Freedom of speech and expression
+    reason: Forum/tier, permit/license, and public forum drills.
+  - code: "44040501"
+    node: Individual Rights > First Amendment Protections > Freedom of religion
+    reason: Neutral/general applicability and religious-clutter guardrails.
+  - code: "44040300"
+    node: Individual Rights > Equal Protection Clause
+    reason: Classification/tier routing and due-process/equal-protection contrast.
+  - code: "44040200"
+    node: Individual Rights > Due Process Clause
+    reason: Clause-routing pair with Equal Protection.
+  - code: "43020201"
+    node: Judicial Review > Jurisdiction of Courts > Constitutional limitations and justiciability
+    reason: Small standing/ripeness/mootness gate overlay.
+minimum_seed_coverage:
+  state_action: 5
+  first_amendment_speech_forum: 5
+  free_exercise: 5
+  due_process_equal_protection_routing: 5
+  standing_ripeness_mootness_gate: 5
+exclude_for_now:
+  - Separation of Powers
+  - Dormant Commerce Clause
+  - Takings
+  - Full justiciability universe outside code 43020201
+qa_rules:
+  - Criminal-procedure constitutional rights belong in 75xx unless raised outside a criminal prosecution.
+  - Christian flavor must not change constitutional posture, actor identity, standing, or First Amendment clutter.

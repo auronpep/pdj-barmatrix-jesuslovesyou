@@ -1,0 +1,41 @@
+command_deck_state:
+  user_id: user_demo
+  since_last_session:
+    summary: "You closed 3 questions on Decisionmaker Inversion \u2014 accuracy on\
+      \ that tag rose +8 pts."
+    still_open: 'Red Zone #1 is still rising; 8 drills left to clear it.'
+    resume_route: /leadme/resume
+  exam_readiness:
+    score: 64
+    status: on_track
+    recent_accuracy: 0.66
+    bank_coverage: 0.87
+    active_zones_burned: 0.19
+    daily_accuracy_delta: 11
+  primary_next_action:
+    task_id: task_roles_judge_jury_001
+    task_type: outline_microdrill
+    title: Roles of Judge and Jury
+    reason: "Red-Zone drill \xB7 8Q \xB7 ~14 min \xB7 Evidence"
+    primary_button_label: START
+    available_in_leadme: true
+  where_to_dig_next:
+    selection_status: algorithm_pending
+    selected_lenses:
+    - active_zones
+    - tension_matrix
+    - pattern_board
+    - misconceptions
+  repair_queue:
+  - item_id: rq_001
+    item_type: drill
+    title: Roles of Judge and Jury
+    reason: 'Closes Active Zone #1'
+  - item_id: rq_002
+    item_type: trap_key
+    title: Jury decides because facts are disputed
+    reason: Recent preliminary-admissibility miss
+  - item_id: rq_003
+    item_type: leadme_card
+    title: FRE 104(a) vs 104(b)
+    reason: Micro-lesson before proof drill

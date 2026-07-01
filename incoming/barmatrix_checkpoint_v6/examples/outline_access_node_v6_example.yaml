@@ -1,0 +1,39 @@
+outline_access_node:
+  spine_code: 3.01.01.01.00.00
+  display_code: 3.01.01.01.00.00
+  legacy_outline_code: '31010101'
+  subject: EVIDENCE
+  subtopic: Presentation of Evidence
+  node_title: Roles of Judge and Jury
+  node_path: Evidence > Presentation of Evidence > General Provisions > Roles of judge
+    and jury
+  role: advanced_index
+  performance:
+    accuracy: 0.82
+    attempts: 11
+    mastery_status: mastered
+    last_seen: 11d ago
+  content:
+    c3_lesson_id: lesson_evidence_104a_104b
+    black_letter_items:
+    - 'FRE 104(a): court decides preliminary admissibility questions and is not bound
+      by evidence rules except privilege.'
+    - 'FRE 104(b): court screens whether a reasonable jury could find a conditional
+      fact; jury ultimately decides.'
+    trap_summary:
+    - 'Decisionmaker inversion: treating a judge question as a jury question.'
+  linked_assets:
+    question_ids:
+    - q_evid_104a_001
+    key_ids:
+    - GK-EVIDENCE-FRE104A-JUDGE
+    trap_key_ids:
+    - TK-EVIDENCE-JURY-DISPUTED-FACTS
+    leadme_card_ids:
+    - lm_evid_104a_card_01
+    drill_ids:
+    - drill_roles_judge_jury_5q
+  actions:
+    drill_now: true
+    start_leadme_for_node: true
+    open_question_bank: true
