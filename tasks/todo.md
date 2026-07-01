@@ -2989,3 +2989,42 @@ Review:
   - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
   - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
   - Pushed Q14223 proof artifacts to `origin/main`.
+
+## Implementation Slice 86 - Q14224 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14224.md`.
+- [x] Confirm no selected transformed CQ file exists at `C:\FOC\Workspace\Finished\CQ14224.md`.
+- [x] Reconcile source key, seed key, selector, and outline code.
+- [x] Add public-safe Q14224 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshots.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- Current state before edits:
+  - `C:\PDJ`: clean `## main...origin/main`.
+  - `C:\barmatrix-app`: clean `## codex-review...origin/codex-review [ahead 84]`.
+  - `C:\barmatrix-api`: read-only reference; unrelated dirty task files remain present.
+  - Seed import/count check returned `26` Con Law details, `30` seed candidates, and `4` remaining; next seed is Q14224 with seed key `B`, outline `44040502`, selector `44040502`/`exact`, coverage group `first_amendment_speech_forum`, and `has_finished_transform: false`.
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14224.md`.
+  - No selected transformed CQ file exists for this item, so this slice uses a conservative first-pass public detail derived from the source row.
+  - Source key and app seed key both use `B`.
+  - Source row and app seed both use outline code `44040502` for Freedom of speech and expression.
+  - Current-law spot check: Ward and Clark support the content-neutral time/place/manner framework requiring narrow tailoring to a significant government interest and ample alternative channels; Constitution Annotated confirms this does not require least-restrictive means.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts` passed with only the repo's LF-to-CRLF warning.
+  - Public-safe/source-leak scan over Q14224 detail returned clean and confirmed no original historic-district motorist wording leaked into the public payload.
+  - `npx tsx` import/count check returned `27` Con Law details, `30` seed candidates, and `3` remaining seeds without detail pages; Q14224 has key `B`, selector `44040502`/`exact`, outline `44040502`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key, selector, outline, source-outline values, and `has_finished_transform: false` match.
+  - `npm run lint` passed in `C:\barmatrix-app`.
+  - `npm run build` passed in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/conlaw-pilot-01/seeds/[questionId]` with `30` generated paths.
+  - HTTP 200 detail check passed for `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14224`; route HTML contains `Content Neutral Still Needs Fit`, `Heritage Row`, `B / correct`, and `GK-CONLAW-TPM-01`.
+  - HTTP 200 sitemap check passed; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14224`.
+  - Screenshot proof was taken from the verified route HTML with scripts stripped, matching the prior fallback boundary; desktop and mobile PNGs both render the full Q14224 content.
+  - Screenshot proof: `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14224-desktop.png` (`1440x2585`, `223512` bytes) and `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14224-mobile.png` (`390x5047`, `222315` bytes). Pixel grid probe found non-white rendered content in both files.
+- Local app commit: `e7bb6a7` (`Add Con Law Q14224 case study`).
+- Private proof push:
+  - Verified `origin` is `https://github.com/auronpep/pdj-barmatrix-jesuslovesyou.git`.
+  - `gh repo view auronpep/pdj-barmatrix-jesuslovesyou --json nameWithOwner,visibility,url` returned `PRIVATE`.
+  - Pushed Q14224 proof artifacts to `origin/main`.
