@@ -97,3 +97,29 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
   - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01`
 - Playwright screenshot:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-pilot-desktop.png`
+
+## Implementation Slice 3 - Evidence Outline Code Pages
+
+- [x] Add `/Jesuslovesyou/evidence-pilot-01/[code]` dynamic route.
+- [x] Prerender all 10 selected Evidence pilot outline codes with `generateStaticParams`.
+- [x] Link Evidence pilot code cards to their outline-node pages.
+- [x] Add one lesson and one trap seed per selected Evidence code.
+- [x] Include code routes in `sitemap.xml`.
+- [x] Verify lint, build, HTTP route response, sitemap inclusion, and visual smoke screenshot.
+
+## Implementation Evidence - Evidence Outline Code Pages - 2026-07-01
+
+- App local commit: `455b6ec Add Evidence pilot code pages`.
+- Added route: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\[code]\page.tsx`.
+- Updated Evidence route links: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\page.tsx`.
+- Updated data module: `C:\barmatrix-app\lib\jesuslovesyou\pilot-data.ts`.
+- Updated sitemap: `C:\barmatrix-app\app\sitemap.ts`.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/[code]` with 10 generated paths.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/33040203`
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/31010107`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Playwright screenshot:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-code-33040203-desktop.png`
