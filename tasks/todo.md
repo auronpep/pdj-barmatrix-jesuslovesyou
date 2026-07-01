@@ -187,3 +187,35 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.json`
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.csv`
   - `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.md`
+
+## Implementation Slice 6 - App Seed Candidate Surface
+
+- [x] Copy the verified Evidence seed-candidate artifact into the app as static data.
+- [x] Add `/Jesuslovesyou/evidence-pilot-01/seeds`.
+- [x] Link the Evidence pilot page to the seed candidate surface.
+- [x] Add the seed route to `sitemap.xml`.
+- [x] Verify lint, build, route HTTP 200, and rendered seed counts.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - App Seed Candidate Surface - 2026-07-01
+
+- App route added: `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\seeds\page.tsx`.
+- App static data added: `C:\barmatrix-app\lib\jesuslovesyou\evidence-seed-candidates.json`.
+- App local commit: `2cd2d5b Add Evidence seed candidate page`.
+- Source data: `C:\PDJ\output\evidence-pilot-01\evidence_pilot_01_seed_candidates.json`.
+- Public-safe data check passed: no `C:\` local filesystem paths in app seed JSON.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds`.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Rendered DOM verification passed:
+  - heading present
+  - `50 SEED CANDIDATES` present
+  - Q22198 present
+  - source `35030200` recode evidence present
+  - question card count: 50
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seeds-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-seeds-mobile.png`
