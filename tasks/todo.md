@@ -2150,3 +2150,38 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14231-desktop.png` (`1440x4390`, `500416` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14231-mobile.png` (`390x8389`, `471790` bytes)
+
+## Implementation Slice 66 - Q14233 Con Law Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14233.md`.
+- [x] Read selected transformed CQ file: `C:\FOC\Workspace\Finished\CQ14233.md`.
+- [x] Confirm source key `C`, transformed/public detail key `A`, and outline correction from source `44040303` to state-action node `44040100`.
+- [x] Add public-safe Q14233 Con Law detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, rendered detail content, and screenshot.
+- [x] Commit scoped app change locally and push PDJ proof privately.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\conlaw-question-details.ts`.
+- App local-only commit: `51996a2 Add Con Law Q14233 case study`.
+- Source/transform reconciliation:
+  - Read-only source row: `C:\FOC\Workspace\QBank\14233.md`.
+  - Selected transformed CQ: `C:\FOC\Workspace\Finished\CQ14233.md`.
+  - Source key: `C`; transformed/public detail key: `A` after answer shuffle.
+  - Source row outline code `44040303`; transformed/app seed outline code `44040100` because the credited answer tests state action, not strict scrutiny.
+  - Current-law spot check: Constitution Annotated, Blum v. Yaretsky, and Rendell-Baker v. Kohn confirm that public funding/regulation does not make a private entity's own decision state action without state responsibility for the challenged act.
+- Route verified:
+  - `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01/seeds/14233`
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check -- lib/jesuslovesyou/conlaw-question-details.ts`
+  - public-safe/source-leak scan over Q14233 detail returned clean.
+  - `npx tsx` import/count check returned `7` Con Law details, `30` seed candidates, and `23` remaining seeds without detail pages; Q14233 has key `A`, `4` choices, `4` locks, `3` keys, and `3` drill seeds; seed key is also `A`.
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for Q14233 detail route; route HTML contains `Public Money Does Not Decide the Act`, `Galilee Nets`, `one-time grant is insufficient`, `GK-CONLAW-STATE-ACTION-GRANT-01`, and `Challenged Act First`.
+  - HTTP 200 for `sitemap.xml`; sitemap contains `/Jesuslovesyou/conlaw-pilot-01/seeds/14233`.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - PowerShell image probe confirmed non-empty desktop/mobile PNGs with expected dimensions and varied sample pixels.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14233-desktop.png` (`1440x4724`, `586345` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-q14233-mobile.png` (`390x9340`, `554665` bytes)
