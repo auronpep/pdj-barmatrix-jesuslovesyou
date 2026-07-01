@@ -469,3 +469,45 @@ Implementation slice 1 complete: public Jesuslovesyou route shell plus prefixed 
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14772-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14772-mobile.png`
+
+## Implementation Slice 13 - Q14778 Non-Hearsay Purpose Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14778.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14778.md`.
+- [x] Add public-safe Q14778 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14778.
+- [x] Commit only the scoped app changes after verification.
+
+## Implementation Evidence - Q14778 Non-Hearsay Purpose Case Study - 2026-07-01
+
+- App data updated: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local commit: `293a426 Add Evidence Q14778 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14778.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14778.md`.
+- Q14778 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14778`.
+- Public-safe data check passed: no `C:\`, `QBank`, `\Finished\`, `qbank_path`, `transform_path`, or `selected_path` strings in the app seed/detail route files.
+- Verification passed: `git -C C:\barmatrix-app diff --check`.
+- Verification passed: `npm run lint` in `C:\barmatrix-app`.
+- Verification passed: `npm run build` in `C:\barmatrix-app`; route table includes `/Jesuslovesyou/evidence-pilot-01/seeds/[questionId]` with 50 generated paths.
+- HTTP 200 verified for:
+  - `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14778`
+  - `http://127.0.0.1:3001/sitemap.xml`
+- Sitemap verification:
+  - seed detail route count: 50
+  - contains `/Jesuslovesyou/evidence-pilot-01/seeds/14778`
+- Rendered DOM verification passed:
+  - `Non-Hearsay Purpose: Reason for Refusal` present
+  - `14778_RETREAT_LOADING_WARNING` present
+  - recommended/source code `33040203` present
+  - `C / correct` present
+  - `GK-EVIDENCE-NONHEARSAY-PURPOSE-01` present
+  - `SK-EVIDENCE-PURPOSE-OF-OFFER-01` present
+  - `LeadMe steps` present
+  - `Purpose Sort` drill present
+- Seed page link counts:
+  - authored case-study links: 6
+  - review-row links: 44
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14778-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14778-mobile.png`
