@@ -3249,3 +3249,29 @@ Review:
   - `C:\PDJ\output\playwright\jesuslovesyou-frontdoor-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-frontdoor-mobile.png`
 - Remaining hard gate: app push, Vercel deploy, and homepage pointer change are still intentionally not performed without explicit release authorization.
+
+## Implementation Slice 91 - Pilot Keys + LeadMe Inventory Bands
+
+- [x] Add aggregate Keys + LeadMe inventory bands to the Evidence pilot page.
+- [x] Add aggregate Keys + LeadMe inventory bands to the Con Law pilot page.
+- [x] Verify aggregate counts from the existing detail arrays.
+- [x] Verify lint, build, HTTP text, screenshots, and CodeGraph sync.
+- [ ] Push or deploy app changes only after explicit release authorization.
+
+Review:
+
+- App scope:
+  - `C:\barmatrix-app\app\Jesuslovesyou\evidence-pilot-01\page.tsx`
+  - `C:\barmatrix-app\app\Jesuslovesyou\conlaw-pilot-01\page.tsx`
+- Aggregate count smoke from the app detail arrays:
+  - Evidence: `50` case studies, `151` reusable keys, `370` LeadMe steps, `150` drill seeds, `376` answer-flow steps.
+  - Con Law: `30` case studies, `92` reusable keys, `228` LeadMe steps, `90` drill seeds, `236` answer-flow steps.
+- `git -C C:\barmatrix-app diff --check -- app/Jesuslovesyou/evidence-pilot-01/page.tsx app/Jesuslovesyou/conlaw-pilot-01/page.tsx` passed with only LF-to-CRLF warnings.
+- `npm run lint` passed in `C:\barmatrix-app`.
+- `npm run build` passed in `C:\barmatrix-app`.
+- HTTP checks on the reused local server confirmed both `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01` and `http://127.0.0.1:3001/Jesuslovesyou/conlaw-pilot-01` returned `200` and contained `Keys + LeadMe Inventory`, `Reusable keys`, `LeadMe steps`, and `Open case study`.
+- Screenshot proof:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-keys-leadme-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-conlaw-keys-leadme-mobile.png`
+- Final app CodeGraph sync after these page edits: `330` files, `4090` nodes, `7923` edges, up to date.
+- Remaining hard gate: app commits remain local-only; no app push, Vercel deploy, or homepage pointer change was performed.
