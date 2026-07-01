@@ -952,3 +952,33 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14825-desktop.png`
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14825-mobile.png`
+
+## Implementation Slice 28 - Q17318 Refreshing-Recollection Calendar Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\17318.md`.
+- [x] Confirmed no transformed CQ file exists: `C:\FOC\Workspace\Finished\CQ17318.md`.
+- [x] Confirmed seed CSV marks `has_finished_transform` as `False` and leaves `transform_path` empty.
+- [x] Add public-safe source-only Q17318 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q17318.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `5809843 Add Evidence Q17318 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\17318.md`.
+- Transform status: no `C:\FOC\Workspace\Finished\CQ17318.md`; seed CSV has `has_finished_transform=False` and empty `transform_path`.
+- Q17318 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/17318`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/17318`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/17318`
+  - Playwright DOM checks found 8 required Q17318 strings.
+  - App data count found `21` authored case studies, `50` seed candidates, and `29` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17318-desktop.png`
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q17318-mobile.png`
