@@ -118,7 +118,7 @@ Why this works:
 
 `C:\PDJ` CodeGraph initialized:
 
-- Files indexed: 9.
+- Files indexed: 11.
 - Nodes: 0.
 - Edges: 0.
 - Language indexed: YAML.

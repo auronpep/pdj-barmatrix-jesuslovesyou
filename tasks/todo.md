@@ -24,7 +24,7 @@ Target route prefix: `/Jesuslovesyou/`
 - Incoming inventory: 33 files total; 32 text/structured files read; 1 workbook inspected.
 - Workbook: 7 sheets, 1,045 nonempty cells.
 - Pilot registries: `docs\evidence-pilot-01-registry.yaml`, `docs\conlaw-pilot-01-registry.yaml`.
-- CodeGraph `C:\PDJ`: initialized; 9 files indexed; 0 nodes; 0 edges; YAML only.
+- CodeGraph `C:\PDJ`: initialized; 11 files indexed; 0 nodes; 0 edges; YAML only.
 - BMO junctions: `C:\BMO\app-repo` -> `C:\barmatrix-app`; `C:\BMO\api-repo` -> `C:\barmatrix-api`.
 - Frontend stack: `C:\barmatrix-app`, Next.js 16.2.6, React 19.2.4, Vercel project `barmatrix-app`.
 - Backend stack: `C:\barmatrix-api`, Express + TypeScript + mysql2 + Stripe + Clerk + Resend.
