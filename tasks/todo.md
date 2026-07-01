@@ -1573,3 +1573,34 @@ Review:
 - Playwright screenshots:
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14769-desktop.png` (`474540` bytes)
   - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14769-mobile.png` (`446818` bytes)
+
+## Implementation Slice 49 - Q14791 Evidence Case Study
+
+- [x] Read read-only source row: `C:\FOC\Workspace\QBank\14791.md`.
+- [x] Read transformed CQ file: `C:\FOC\Workspace\Finished\CQ14791.md`.
+- [x] Add public-safe Q14791 detail payload to the app.
+- [x] Verify lint, build, HTTP 200, sitemap inclusion, and rendered detail content.
+- [x] Capture desktop and mobile screenshots for Q14791.
+- [x] Commit only the scoped app changes after verification.
+
+Review:
+
+- App scope: `C:\barmatrix-app\lib\jesuslovesyou\evidence-question-details.ts`.
+- App local-only commit: `41e8d65 Add Evidence Q14791 case study`.
+- Source row read: `C:\FOC\Workspace\QBank\14791.md`.
+- Transform read: `C:\FOC\Workspace\Finished\CQ14791.md`.
+- Q14791 detail route: `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14791`.
+- Verification passed:
+  - `git -C C:\barmatrix-app diff --check`
+  - public-safe scan over app seed/detail data returned `NO_HITS`
+  - `npm run lint`
+  - `npm run build`
+  - HTTP 200 for `http://127.0.0.1:3001/Jesuslovesyou/evidence-pilot-01/seeds/14791`
+  - `sitemap.xml` includes `/Jesuslovesyou/evidence-pilot-01/seeds/14791`
+  - Route HTML contains the Q14791 title, stem signal, correct answer text, and learned-treatise exhibit rule.
+  - Playwright CLI captured desktop and mobile screenshots.
+  - Visual screenshot inspection found no obvious overlap or broken layout on desktop/mobile.
+  - App data count found `42` authored case studies, `50` seed candidates, and `8` remaining seeds without detail pages.
+- Playwright screenshots:
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14791-desktop.png` (`527140` bytes)
+  - `C:\PDJ\output\playwright\jesuslovesyou-evidence-q14791-mobile.png` (`490086` bytes)
