@@ -230,9 +230,7 @@ $seedJsonPath = Join-Path $OutputDir "conlaw_pilot_01_seed_candidates.json"
 $seedCsvPath = Join-Path $OutputDir "conlaw_pilot_01_seed_candidates.csv"
 $seedSummaryPath = Join-Path $OutputDir "conlaw_pilot_01_seed_candidates.md"
 
-$rows |
-  Sort-Object selector_code, outline_code, source, question_id |
-  ConvertTo-Json -Depth 4 |
+ConvertTo-Json -InputObject @($rows | Sort-Object selector_code, outline_code, source, question_id) -Depth 4 |
   Set-Content -LiteralPath $inventoryJsonPath -Encoding utf8
 
 $rows |
@@ -257,9 +255,7 @@ $inventoryLines.Add("Total rows: $($rows.Count)")
 $inventoryLines | Set-Content -LiteralPath $inventorySummaryPath -Encoding utf8
 
 $seedCandidates = @(Get-SeedCandidates $rows)
-$seedCandidates |
-  Sort-Object selector_code, outline_code, question_id |
-  ConvertTo-Json -Depth 4 |
+ConvertTo-Json -InputObject @($seedCandidates | Sort-Object selector_code, outline_code, question_id) -Depth 4 |
   Set-Content -LiteralPath $seedJsonPath -Encoding utf8
 
 $seedCandidates |
