@@ -1,11 +1,53 @@
 param(
   [string]$OutputRoot = "C:\PDJ\output",
   [string]$AppRoot = "C:\barmatrix-app",
-  [string]$PythonExe = "C:\Users\JesusLovesMe\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe",
+  [string]$PythonExe = $env:BARMATRIX_PYTHON,
   [switch]$Verify
 )
 
 $ErrorActionPreference = "Stop"
+
+function Resolve-PythonExe {
+  param([string]$Candidate)
+
+  # The Microsoft Store app-execution alias is a stub that opens the Store
+  # instead of running a script, so it is never a usable interpreter here.
+  function Test-UsableInterpreter {
+    param([string]$Path)
+    return $Path -and ($Path -notlike "*\WindowsApps\*")
+  }
+
+  if ($Candidate) {
+    if (Test-Path -LiteralPath $Candidate) {
+      return (Resolve-Path -LiteralPath $Candidate).Path
+    }
+
+    $explicit = Get-Command -Name $Candidate -CommandType Application -ErrorAction SilentlyContinue |
+      Select-Object -First 1
+    if ($explicit) {
+      return $explicit.Source
+    }
+
+    throw "Python interpreter not found: '$Candidate' (from -PythonExe or BARMATRIX_PYTHON)."
+  }
+
+  foreach ($name in @("python.exe", "python3.exe", "python", "python3", "py.exe", "py")) {
+    $found = Get-Command -Name $name -CommandType Application -ErrorAction SilentlyContinue |
+      Where-Object { Test-UsableInterpreter $_.Source } |
+      Select-Object -First 1
+    if ($found) {
+      return $found.Source
+    }
+  }
+
+  throw @"
+No Python interpreter found. The XLSX step needs Python with openpyxl installed.
+Fix by any one of:
+  - pass -PythonExe "<full path to python.exe>"
+  - set the BARMATRIX_PYTHON environment variable
+  - put python on PATH
+"@
+}
 
 function Write-Utf8File {
   param(
@@ -94,7 +136,11 @@ wb.save(xlsx_path)
 print(f"{ws.max_row - 1} data rows -> {xlsx_path}")
 '@
 
-  $python | & $PythonExe - $CsvPath $XlsxPath
+  if (-not $script:ResolvedPythonExe) {
+    $script:ResolvedPythonExe = Resolve-PythonExe -Candidate $PythonExe
+  }
+
+  $python | & $script:ResolvedPythonExe - $CsvPath $XlsxPath
   if ($LASTEXITCODE -ne 0) {
     throw "CSV to XLSX conversion failed for $CsvPath"
   }
